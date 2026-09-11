@@ -1,0 +1,1343 @@
+<style>
+  :root {
+    --text:#171717;
+    --muted:#6d6d6d;
+    --line:#dedede;
+    --stripe:#f3f3f3;
+    --bg:#fff;
+    --accent:#e62b20;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap {
+    width:min(100% - 32px, 1080px);
+    margin:0 auto;
+    padding:38px 0 56px;
+  }
+  .brand {
+    margin-bottom:42px;
+    line-height:.92;
+  }
+  .brand strong {
+    display:block;
+    font-size:27px;
+    letter-spacing:-1.4px;
+  }
+  .brand span {
+    display:block;
+    color:var(--accent);
+    font-size:25px;
+    font-weight:700;
+    letter-spacing:-1.2px;
+  }
+  h1 {
+    margin:0 0 34px;
+    font-size:clamp(44px, 8vw, 84px);
+    line-height:.95;
+    letter-spacing:-4px;
+    font-weight:800;
+  }
+  .tools {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin:0 0 14px;
+    position:sticky;
+    top:0;
+    z-index:20;
+    padding:10px 0;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);
+  }
+ #search {
+    width: 82%;
+    border: 3px solid #ff833d;
+    border-radius: 10px;
+    padding: 13px 15px;
+    font: inherit;
+    font-size: 16px;
+    outline: none;
+    background: #feffdc6b;
+}
+  #search:focus {
+    border-color:#999;
+    box-shadow:0 0 0 3px #eee;
+  }
+  #count {
+    flex:0 0 auto;
+    white-space:nowrap;
+    color:var(--muted);
+    font-size:14px;
+  }
+  .table-wrap {
+    overflow-x:auto;
+    border-radius:10px;
+    border:1px solid var(--line);
+  }
+  table {
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    font-size:16px;
+  }
+  th, td {
+    text-align:left;
+    padding:9px 14px;
+    vertical-align:middle;
+    border-bottom:1px solid var(--line);
+  }
+  th {
+    background:#fff;
+    font-size:15px;
+    font-weight:800;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+  th:first-child, td:first-child {
+    width:31%;
+  }
+  th:last-child, td:last-child {
+    width:69%;
+  }
+  tbody tr:nth-child(odd) td {
+    background:var(--stripe);
+  }
+  tbody tr:last-child td {
+    border-bottom:0;
+  }
+  td {
+    line-height:1.25;
+    overflow-wrap:anywhere;
+  }
+  #backTop {
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:#171717;
+    color:#fff;
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.18);
+    z-index:30;
+  }
+  #backTop.show {
+    display:flex;
+  }
+  #backTop:hover {
+    transform:translateY(-2px);
+  }
+
+  @media (max-width:600px) {
+    .wrap {
+      width:min(100% - 20px, 1080px);
+      padding:24px 0 36px;
+    }
+    .brand {
+      margin-bottom:30px;
+    }
+    .brand strong { font-size:22px; }
+    .brand span { font-size:21px; }
+    h1 {
+      font-size:42px;
+      letter-spacing:-2.4px;
+      margin-bottom:24px;
+    }
+    .tools {
+      display:block;
+      margin-bottom:10px;
+      padding:8px 0 9px;
+    }
+    #count {
+      display:block;
+      margin:7px 2px 0;
+    }
+    table {
+      font-size:15px;
+    }
+    th, td {
+      padding:8px 10px;
+    }
+    th {
+      font-size:14px;
+    }
+    th:first-child, td:first-child {
+      width:34%;
+    }
+    th:last-child, td:last-child {
+      width:66%;
+    }
+  }
+</style>
+
+
+<main class="wrap">
+  <h1>K — Italiani</h1>
+
+  <div class="tools">
+    <input id="search" type="search" placeholder="Cerca artista o brano…" aria-label="Cerca artista o brano">
+    <span id="count">1085 brani</span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="songs">
+      <thead>
+        <tr><th>Artista</th><th>Brano</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>883</td><td>Ci sono Anch'io</td></tr>
+<tr><td>883</td><td>Come Mai</td></tr>
+<tr><td>883</td><td>GLI ANNI (Strumentale)</td></tr>
+<tr><td>883</td><td>hanno ucciso l'uomo ragno</td></tr>
+<tr><td>883</td><td>La regola dell'amico (Strumentale)</td></tr>
+<tr><td>883</td><td>NELLA NOTTE</td></tr>
+<tr><td>883</td><td>Nessun Rimpianto (Strumentale)</td></tr>
+<tr><td>883</td><td>Non me la menare (Strumentale)</td></tr>
+<tr><td>883</td><td>NORD SUD OVEST EST (Strumentale)</td></tr>
+<tr><td>883</td><td>Nord Sud Ovest est</td></tr>
+<tr><td>883</td><td>Sei un Mito (Strumentale)</td></tr>
+<tr><td>883</td><td>TIENI IL TEMPO (Strumentale)</td></tr>
+<tr><td>883 (Max Pezzali)</td><td>COME MAI</td></tr>
+<tr><td>883 MAX PEZZALI</td><td>La dura legge del gol (Strumentale)</td></tr>
+<tr><td>A TESTA IN GIÙ</td><td>Pino Daniele</td></tr>
+<tr><td>A. Celentano &amp; C. Mori</td><td>La Coppia Più Bella Del Mondo</td></tr>
+<tr><td>ABBRACCIAME</td><td>Andrea Sannino</td></tr>
+<tr><td>Achille Lauro</td><td>Incoscienti Giovani (Strumentale)</td></tr>
+<tr><td>Achille Lauro</td><td>Senza una stupida storia</td></tr>
+<tr><td>ACHILLE LAURO, ROSE VILLAIN</td><td>FRAGOLE (Strumentale)</td></tr>
+<tr><td>Adriano Celentano</td><td>24.000 Baci</td></tr>
+<tr><td>Adriano Celentano</td><td>Azzurro</td></tr>
+<tr><td>Adriano Celentano</td><td>Il Ragazzo della Via Gluck</td></tr>
+<tr><td>Adriano Celentano</td><td>Il tempo se ne va</td></tr>
+<tr><td>Adriano Celentano</td><td>Il Tuo Bacio è Come Un Rock</td></tr>
+<tr><td>Adriano Celentano</td><td>Soli</td></tr>
+<tr><td>Adriano Celentano</td><td>Storia d'amore</td></tr>
+<tr><td>Adriano Celentano</td><td>Svalutation</td></tr>
+<tr><td>Adriano Celentano</td><td>Una carezza in un pugno (Strumentale)</td></tr>
+<tr><td>Adriano Pappalardo</td><td>Ricominciamo</td></tr>
+<tr><td>Adriano Pappalardo</td><td>Ricominciamo (Strumentale)</td></tr>
+<tr><td>Al bano</td><td>E' la mia vita</td></tr>
+<tr><td>Al Bano &amp; Romina Power</td><td>Felicità</td></tr>
+<tr><td>Al Bano &amp; Romina Power</td><td>Libertà</td></tr>
+<tr><td>Alan Sorrenti</td><td>Tu sei l'unica donna per me</td></tr>
+<tr><td>Albano e Romina</td><td>Ci Sarà</td></tr>
+<tr><td>Albano e Romina</td><td>Felicità</td></tr>
+<tr><td>Albano e Romina</td><td>Nostalgia Canaglia</td></tr>
+<tr><td>Albano e Romina</td><td>Sharazan</td></tr>
+<tr><td>Alberto Camerini</td><td>Tanz Bambolina (Strumentale)</td></tr>
+<tr><td>Aleandro Baldi</td><td>Passerà</td></tr>
+<tr><td>Aleandro Baldi e Francesca Alotta</td><td>Non Amarmi</td></tr>
+<tr><td>Alessandra Amoroso</td><td>Amore puro</td></tr>
+<tr><td>ALESSANDRA AMOROSO</td><td>CAMERA 209 (Strumentale)</td></tr>
+<tr><td>Alessandra Amoroso</td><td>Comunque Andare</td></tr>
+<tr><td>Alessandra Amoroso</td><td>Io che amo solo te</td></tr>
+<tr><td>Alessandra Amoroso</td><td>La mia storia con te</td></tr>
+<tr><td>Alessandra Amoroso</td><td>Stupida</td></tr>
+<tr><td>Alessandro Canino</td><td>Brutta</td></tr>
+<tr><td>Alessandro Mannarino</td><td>Serenata Lacrimosa (Strumentale)</td></tr>
+<tr><td>Alex Baroni</td><td>Cambiare</td></tr>
+<tr><td>Alex Baroni</td><td>La distanza di un amore</td></tr>
+<tr><td>Alex Britti</td><td>La Vasca</td></tr>
+<tr><td>Alex Britti</td><td>Oggi sono io (Strumentale)</td></tr>
+<tr><td>ALFA</td><td>a me mi piace ft. Manu Chao</td></tr>
+<tr><td>Alfa</td><td>Bellissimissima (Strumentale)</td></tr>
+<tr><td>Alfa</td><td>Il filo rosso (Strumentale)</td></tr>
+<tr><td>Alice</td><td>Il vento caldo dell'estate</td></tr>
+<tr><td>Alice</td><td>Per Elisa</td></tr>
+<tr><td>Alice &amp; Franco Battiato</td><td>Chanson egocentrique</td></tr>
+<tr><td>Alicia</td><td>A Natale puoi</td></tr>
+<tr><td>AMARTI È L'IMMENSO PER ME</td><td>Eros Ramazzotti &amp; A. Bucci</td></tr>
+<tr><td>Ambra</td><td>T'Appartengo</td></tr>
+<tr><td>Amedeo Minghi e Mietta</td><td>Vattene amore (trottolino amoroso) - con cori (Strumentale)</td></tr>
+<tr><td>Andrea Bocelli</td><td>Bésame mucho (Strumentale)</td></tr>
+<tr><td>Andrea Bocelli</td><td>Con Te Partirò</td></tr>
+<tr><td>Andrea Bocelli</td><td>Il mare calmo della sera</td></tr>
+<tr><td>Andrea Bocelli</td><td>Roma nun fa' la stupida stasera</td></tr>
+<tr><td>Andrea Bocelli</td><td>Sarà Settembre ( September Morn)</td></tr>
+<tr><td>Andrea Bocelli e Giorgia</td><td>Vivo per lei</td></tr>
+<tr><td>Andrea Bocelli ft Ariana Grande</td><td>E più ti penso</td></tr>
+<tr><td>Andrea Bocelli ft. Jennifer Lopez</td><td>Quizás, Quizás, Quizás</td></tr>
+<tr><td>Angelina Mango</td><td>Che t'o dico a fa' (Strumentale)</td></tr>
+<tr><td>Angelina Mango</td><td>La noia</td></tr>
+<tr><td>Angelina Mango</td><td>La Rondine (Strumentale)</td></tr>
+<tr><td>Angelo Branduardi</td><td>Alla Fiera dell'est</td></tr>
+<tr><td>Anna</td><td>30°C (abbronzatissima e bellissima) (Strumentale)</td></tr>
+<tr><td>Anna Oxa</td><td>Donna con te</td></tr>
+<tr><td>Anna Oxa</td><td>E' tutto un attimo</td></tr>
+<tr><td>Anna Oxa</td><td>Pensami per te</td></tr>
+<tr><td>Anna Oxa</td><td>Quando nasce un amore</td></tr>
+<tr><td>Anna Oxa</td><td>Quando nasce un amore (Strumentale)</td></tr>
+<tr><td>Anna Oxa</td><td>Senza di me</td></tr>
+<tr><td>Anna Oxa</td><td>Senza pietà (</td></tr>
+<tr><td>Anna Oxa</td><td>Un’emozione da poco</td></tr>
+<tr><td>Anna Oxa &amp; Fausto Leali</td><td>Ti lascerò</td></tr>
+<tr><td>Anna Tatangelo</td><td>Bastardo</td></tr>
+<tr><td>Anna Tatangelo</td><td>Quando due si lasciano</td></tr>
+<tr><td>Anna Tatangelo</td><td>Ragazza Di Periferia</td></tr>
+<tr><td>Annalisa</td><td>Bellissima</td></tr>
+<tr><td>Annalisa</td><td>Esibizionista</td></tr>
+<tr><td>Annalisa</td><td>Maschio (Strumentale)</td></tr>
+<tr><td>Annalisa</td><td>Senza Riserva</td></tr>
+<tr><td>Annalisa</td><td>Una finestra tra le stelle</td></tr>
+<tr><td>Annalisa</td><td>Vincerò</td></tr>
+<tr><td>Annalisa &amp; Marco Mengoni</td><td>Piazza San Marco</td></tr>
+<tr><td>Antonella Arancio</td><td>Ricordi del cuore</td></tr>
+<tr><td>Antonello Venditti</td><td>Alta marea</td></tr>
+<tr><td>Antonello Venditti</td><td>Che Tesoro che sei</td></tr>
+<tr><td>Antonello Venditti</td><td>Ci Vorrebbe Un Amico</td></tr>
+<tr><td>Antonello Venditti</td><td>Ci vorrebbe un amico (Strumentale)</td></tr>
+<tr><td>Antonello Venditti</td><td>Dalla pelle al cuore</td></tr>
+<tr><td>Antonello Venditti</td><td>Notte prima degli esami</td></tr>
+<tr><td>Antonello Venditti</td><td>Ogni Volta</td></tr>
+<tr><td>Antonello Venditti</td><td>Ricordati di me</td></tr>
+<tr><td>Antonello Venditti</td><td>Roma Capoccia</td></tr>
+<tr><td>Antonello Venditti</td><td>Unica</td></tr>
+<tr><td>Arisa</td><td>Il tuo profumo</td></tr>
+<tr><td>Arisa</td><td>L'amore è un'altra cosa</td></tr>
+<tr><td>Arisa</td><td>La Notte</td></tr>
+<tr><td>Arisa</td><td>Magica Favola</td></tr>
+<tr><td>Arisa</td><td>Malamorenò</td></tr>
+<tr><td>Arisa</td><td>Sincerità</td></tr>
+<tr><td>ARRIVERÀ</td><td>Emma &amp; Modà</td></tr>
+<tr><td>Audio 2</td><td>Alle Venti</td></tr>
+<tr><td>AVA, CAPO PLAZA, ANNA</td><td>Vetri neri (Strumentale)</td></tr>
+<tr><td>Baby K Ft Giusy Ferreri</td><td>Roma Bangkok</td></tr>
+<tr><td>BABY K ft. MIKA</td><td>BOLERO (Strumentale)</td></tr>
+<tr><td>Banfy feat. Sheridan</td><td>Bam Bam</td></tr>
+<tr><td>Bella Ciao</td><td>Canta la canzone della resistenza</td></tr>
+<tr><td>Beniamino Gigli</td><td>Mamma</td></tr>
+<tr><td>Biagio Antonacci</td><td>Iris</td></tr>
+<tr><td>Biagio Antonacci</td><td>Non è mai stato subito</td></tr>
+<tr><td>Biagio Antonacci</td><td>Pazzo di lei (Strumentale)</td></tr>
+<tr><td>Biagio Antonacci</td><td>Sognami (Strumentale)</td></tr>
+<tr><td>Blanco</td><td>Piangere a 90°</td></tr>
+<tr><td>Blue</td><td>A Chi Mi Dice</td></tr>
+<tr><td>Bobby Solo</td><td>Una lacrima sul viso (Strumentale)</td></tr>
+<tr><td>Bruno Lauzi</td><td>Ritornerai (Strumentale)</td></tr>
+<tr><td>Brunori Sas</td><td>Canzone contro la paura</td></tr>
+<tr><td>Brunori SAS</td><td>Guardia 82 (Strumentale)</td></tr>
+<tr><td>Brunori SAS</td><td>L'albero delle Noci (Strumentale)</td></tr>
+<tr><td>Bungaro</td><td>Guardastelle</td></tr>
+<tr><td>Calcutta</td><td>2Minuti (Strumentale)</td></tr>
+<tr><td>Calcutta</td><td>Frosinone</td></tr>
+<tr><td>Calcutta</td><td>Kiwi (Strumentale)</td></tr>
+<tr><td>CALCUTTA</td><td>PARACETAMOLO (Strumentale)</td></tr>
+<tr><td>Calcutta</td><td>Pesto (Strumentale)</td></tr>
+<tr><td>Caparezza</td><td>Vengo dalla Luna (Strumentale)</td></tr>
+<tr><td>Caparezza</td><td>Vengo dalla luna</td></tr>
+<tr><td>CAPITAN HARLOCK SIGLA</td><td>(Strumentale)</td></tr>
+<tr><td>CARL BRAVE, NOEMI</td><td>HULA-HOOP (Strumentale)</td></tr>
+<tr><td>Carmen Consoli</td><td>Amore di Plastica</td></tr>
+<tr><td>Carmen Consoli ft Giorgia</td><td>L'ultimo bacio</td></tr>
+<tr><td>Caterina Caselli</td><td>insieme a te non ci sto più</td></tr>
+<tr><td>Caterina Caselli</td><td>Insieme a te non ci sto più (Strumentale)</td></tr>
+<tr><td>Caterina Caselli</td><td>Nessuno mi può giudicare</td></tr>
+<tr><td>Caterina Caselli</td><td>Nessuno mi può giudicare</td></tr>
+<tr><td>Caterina Caselli</td><td>Perdono</td></tr>
+<tr><td>CELENTANO</td><td>L'EMOZIONE NON HA VOCE (IO NON SO PARLAR D'AMORE) (Strumentale)</td></tr>
+<tr><td>Cesare Cremonini</td><td>Il comico</td></tr>
+<tr><td>Cesare Cremonini</td><td>Maggese</td></tr>
+<tr><td>Cesare Cremonini</td><td>Marmellata</td></tr>
+<tr><td>Cesare Cremonini</td><td>Ora che non ho più te (Strumentale)</td></tr>
+<tr><td>Cesare Cremonini</td><td>Poetica</td></tr>
+<tr><td>Cesare Cremonini</td><td>Una Come Te</td></tr>
+<tr><td>Cesare Cremonini</td><td>Vieni a vedere perché</td></tr>
+<tr><td>Cha Cha Twist</td><td>Riki &amp; Lorella Cuccarini</td></tr>
+<tr><td>CHECCO ZALONE</td><td>ANGELA (Strumentale)</td></tr>
+<tr><td>CHECCO ZALONE</td><td>SULLA BARCA DELL'OLIGARCA (Strumentale)</td></tr>
+<tr><td>Chiara Galiazzo</td><td>Il Futuro che sarà</td></tr>
+<tr><td>Christian</td><td>Cara (Strumentale)</td></tr>
+<tr><td>Ciccio Merolla, Amandha Fox</td><td>Malatìa (Strumentale)</td></tr>
+<tr><td>Classici Napoletani</td><td>i te Vurria Vasà</td></tr>
+<tr><td>CLAUDIA MORI E CELENTANO</td><td>NON SUCCEDERA' PIU' (Strumentale)</td></tr>
+<tr><td>Claudio Baglioni</td><td>Avrai</td></tr>
+<tr><td>Claudio Baglioni</td><td>E tu come stai</td></tr>
+<tr><td>Claudio Baglioni</td><td>E tu (Strumentale)</td></tr>
+<tr><td>Claudio Baglioni</td><td>Fratello sole sorella luna</td></tr>
+<tr><td>Claudio Baglioni</td><td>Gli Anni Più Belli</td></tr>
+<tr><td>Claudio Baglioni</td><td>Io Me Ne Andrei</td></tr>
+<tr><td>Claudio Baglioni</td><td>La vita è adesso</td></tr>
+<tr><td>Claudio Baglioni</td><td>Poster</td></tr>
+<tr><td>Claudio Baglioni</td><td>Questo piccolo grande amore</td></tr>
+<tr><td>Claudio Baglioni</td><td>Questo piccolo grande amore (Strumentale)</td></tr>
+<tr><td>Claudio Baglioni</td><td>Sabato pomeriggio</td></tr>
+<tr><td>Claudio Baglioni</td><td>Sabato Pomeriggio</td></tr>
+<tr><td>Claudio Baglioni</td><td>Solo</td></tr>
+<tr><td>Claudio Baglioni</td><td>Via (Strumentale)</td></tr>
+<tr><td>Claudio Cecchetto</td><td>Gioca Jouer</td></tr>
+<tr><td>Claudio Villa</td><td>Un amore così grande</td></tr>
+<tr><td>Coez e Frah Quintale</td><td>Alta marea (Strumentale)</td></tr>
+<tr><td>Coma Cose</td><td>Cuoricini (Strumentale)</td></tr>
+<tr><td>Cugini di Campagna</td><td>Anima Mia</td></tr>
+<tr><td>Daniele Silvestri</td><td>A bocca chiusa (Strumentale)</td></tr>
+<tr><td>Daniele Silvestri</td><td>Le cose in comune (Strumentale)</td></tr>
+<tr><td>Daniele Silvestri</td><td>Salirò</td></tr>
+<tr><td>DE ANDRE' E PFM</td><td>IL PESCATORE (Strumentale)</td></tr>
+<tr><td>Delta V</td><td>Un'estate fa</td></tr>
+<tr><td>Dik Dik</td><td>L'Isola Di Wight</td></tr>
+<tr><td>Dik Dik</td><td>L'isola di Wight (Strumentale)</td></tr>
+<tr><td>DIK DIK</td><td>SENZA LUCE (Strumentale)</td></tr>
+<tr><td>Ditonellapiaga</td><td>Che Fastidio</td></tr>
+<tr><td>Domenico Modugno</td><td>Meraviglioso</td></tr>
+<tr><td>Domenico Modugno</td><td>Nel blu dipinto di blu "Volare"</td></tr>
+<tr><td>Domenico Modugno</td><td>Vecchio Frack</td></tr>
+<tr><td>Don Backy</td><td>L'immensità (Strumentale)</td></tr>
+<tr><td>Don Backy ⧸ Marisa Sannia</td><td>Casa Bianca</td></tr>
+<tr><td>DONATELLA RETTORE</td><td>DONATELLA (Strumentale)</td></tr>
+<tr><td>Donatella Rettore</td><td>Lamette</td></tr>
+<tr><td>Dori Ghezzi</td><td>Margherita non lo sa</td></tr>
+<tr><td>Drupi</td><td>Piccola e Fragile</td></tr>
+<tr><td>DRUPI</td><td>SERENO E' (Strumentale)</td></tr>
+<tr><td>Dulce Pontes, Ennio Morricone</td><td>Your Love (Once Upon a Time in the West)</td></tr>
+<tr><td>Edoardo Bennato</td><td>Il Gatto e La Volpe</td></tr>
+<tr><td>EDOARDO BENNATO</td><td>IL GATTO E LA VOLPE (Strumentale)</td></tr>
+<tr><td>Edoardo Bennato</td><td>Il Rock del capitano Uncino (Strumentale)</td></tr>
+<tr><td>Edoardo Bennato</td><td>Il rock di capitan uncino</td></tr>
+<tr><td>EDOARDO BENNATO</td><td>L'ISOLA CHE NON C'E' (Strumentale)</td></tr>
+<tr><td>Edoardo Bennato</td><td>L'Isola Che Non C'è</td></tr>
+<tr><td>Edoardo Bennato</td><td>La Fata (Strumentale)</td></tr>
+<tr><td>Edoardo Bennato</td><td>Sono solo canzonette (Strumentale)</td></tr>
+<tr><td>EDOARDO BENNATO</td><td>UN GIORNO CREDI (Strumentale)</td></tr>
+<tr><td>Edoardo Bennato</td><td>Un Giorno Credi</td></tr>
+<tr><td>EDOARDO BENNATO</td><td>VIVA LA MAMMA (Strumentale)</td></tr>
+<tr><td>Edoardo Bennato</td><td>Viva la Mamma</td></tr>
+<tr><td>Edoardo Vianello</td><td>Guarda Come Dondolo</td></tr>
+<tr><td>Edoardo Vianello</td><td>I Watussi</td></tr>
+<tr><td>Eduardo De Crescenzo</td><td>Ancora (-1 Semitono)</td></tr>
+<tr><td>Eduardo De Crescenzo</td><td>Ancora</td></tr>
+<tr><td>Elio e le Storie Tese</td><td>Christmas with the Yours</td></tr>
+<tr><td>ELIO E LE STORIE TESE</td><td>EL PUBE</td></tr>
+<tr><td>Elisa</td><td>A modo tuo</td></tr>
+<tr><td>Elisa</td><td>Eppure Sentire</td></tr>
+<tr><td>Elisa</td><td>Gli Ostacoli Del Cuore con Ligabue</td></tr>
+<tr><td>Elisa</td><td>L'anima vola</td></tr>
+<tr><td>Elisa</td><td>Luce (Tramonti a Nord est)</td></tr>
+<tr><td>Elisa</td><td>No Hero</td></tr>
+<tr><td>Elisa</td><td>Ti vorrei sollevare ft Giuliano Sangiorgi</td></tr>
+<tr><td>Elisa</td><td>Una Poesia anche per te</td></tr>
+<tr><td>ELISA E JOVANOTTI</td><td>PALLA AL CENTRO (Strumentale)</td></tr>
+<tr><td>ELISA ft. MATILDA DE ANGELIS</td><td>LITORANEA (Strumentale)</td></tr>
+<tr><td>ELODIE</td><td>TRIBALE (Strumentale)</td></tr>
+<tr><td>Elodie</td><td>Tutta colpa mia</td></tr>
+<tr><td>Emma Marrone</td><td>Calore</td></tr>
+<tr><td>Emma Marrone</td><td>L'amore non mi basta</td></tr>
+<tr><td>EMMA MARRONE</td><td>MEZZO MONDO (Strumentale)</td></tr>
+<tr><td>Enrico Musiani</td><td>Chitarra Vagabonda (Strumentale)</td></tr>
+<tr><td>Enzo Carella</td><td>Barbara (Strumentale)</td></tr>
+<tr><td>ENZO JANNACCI</td><td>SILVANO (Strumentale)</td></tr>
+<tr><td>Enzo Jannacci</td><td>Vengo anch'io</td></tr>
+<tr><td>ENZO JANNACCI</td><td>VENGO ANCH'IO, NO TU NO</td></tr>
+<tr><td>Equipe 84</td><td>Io ho in mente te (Strumentale)</td></tr>
+<tr><td>Eramo e Passavanti</td><td>Senza confini</td></tr>
+<tr><td>Ernia</td><td>Berlino</td></tr>
+<tr><td>Ernia</td><td>Bresh - Fabri Fibra - Parafulmini (Strumentale)</td></tr>
+<tr><td>ERNIA</td><td>PER TE</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Adesso tu</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Il mio giorno preferito</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Più bella cosa</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Più bella cosa</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Quanto amore sei</td></tr>
+<tr><td>Eros Ramazzotti</td><td>se bastasse una canzone</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Terra Promessa</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Un Cuore con le ali</td></tr>
+<tr><td>Eros Ramazzotti</td><td>Una storia importante</td></tr>
+<tr><td>EROS RAMAZZOTTI &amp; ALICIA KEYS</td><td>L'AURORA</td></tr>
+<tr><td>Eros Ramazzotti &amp; Anastacia</td><td>I belong To you</td></tr>
+<tr><td>EUGENIO BENNATO, Musicanova</td><td>BRIGANTE SE MORE (Strumentale)</td></tr>
+<tr><td>Eugenio Finardi</td><td>Le ragazze di Osaka (Strumentale)</td></tr>
+<tr><td>Eugenio Finardi</td><td>Patrizia (Strumentale)</td></tr>
+<tr><td>Fabio Concato</td><td>Domenica Bestiale</td></tr>
+<tr><td>Fabio Concato</td><td>Fiore di maggio</td></tr>
+<tr><td>Fabio Concato</td><td>Guido piano (Piano)</td></tr>
+<tr><td>Fabio Concato</td><td>Ti ricordo ancora (Strumentale)</td></tr>
+<tr><td>FABIO ROVAZZI</td><td>ORIETTA BERTI - LA DISCOTECA ITALIANA (Strumentale)</td></tr>
+<tr><td>FABRI FIBRA &amp; MAURIZIO CARUCCI</td><td>STELLE (Strumentale)</td></tr>
+<tr><td>FABRIZIO DE ANDRE'</td><td>DON RAFFAE' (Strumentale)</td></tr>
+<tr><td>FABRIZIO DE ANDRE'</td><td>IL TESTAMENTO DI TITO (Strumentale)</td></tr>
+<tr><td>FABRIZIO DE ANDRE'</td><td>VIA DEL CAMPO</td></tr>
+<tr><td>FABRIZIO DE ANDRE' E PFM</td><td>UN GIUDICE (Strumentale)</td></tr>
+<tr><td>FABRIZIO DE ANDRE' PFM</td><td>BOCCA DI ROSA (Strumentale)</td></tr>
+<tr><td>Fabrizio De Andrè</td><td>La Canzone di Marinella</td></tr>
+<tr><td>Fabrizio De Andrè</td><td>Nella Mia Ora Di Libertà</td></tr>
+<tr><td>Fabrizio De André</td><td>Amore che vieni, amore che vai</td></tr>
+<tr><td>FABRIZIO DE ANDRÉ</td><td>ANDREA (Strumentale)</td></tr>
+<tr><td>Fabrizio De André</td><td>Crêuza de mä</td></tr>
+<tr><td>Fabrizio De André</td><td>La ballata del Michè</td></tr>
+<tr><td>Fabrizio De André e PFM</td><td>Volta la carta (Strumentale)</td></tr>
+<tr><td>Fabrizio Moro</td><td>Libero</td></tr>
+<tr><td>FAUSTO LEALI</td><td>A CHI (Strumentale)</td></tr>
+<tr><td>Fausto Leali</td><td>A Chi</td></tr>
+<tr><td>Fausto Leali</td><td>Io Amo</td></tr>
+<tr><td>Fausto Leali</td><td>Mi Manchi</td></tr>
+<tr><td>FEDERICO MARTELLI</td><td>BELLO BELLO (Strumentale)</td></tr>
+<tr><td>Fedez</td><td>Cigno nero Feat Francesca Michielin</td></tr>
+<tr><td>Fedez, Annalisa, Articolo 31</td><td>Disco Paradise (Strumentale)</td></tr>
+<tr><td>FEDEZ, TANANAI, MARA SATTEI</td><td>LA DOLCE VITA NON DEVOCALIZZATA (Strumentale)</td></tr>
+<tr><td>Fiordaliso</td><td>Non voglio mica la luna</td></tr>
+<tr><td>Fiorella Mannoia</td><td>Caffè nero Bollente</td></tr>
+<tr><td>Fiorella Mannoia</td><td>Come Si Cambia</td></tr>
+<tr><td>Fiorella Mannoia</td><td>I Dubbi dell'amore</td></tr>
+<tr><td>Fiorella Mannoia</td><td>I treni a vapore</td></tr>
+<tr><td>FIORELLA MANNOIA</td><td>IL CIELO D'IRLANDA (Strumentale)</td></tr>
+<tr><td>Fiorella Mannoia</td><td>La Cura</td></tr>
+<tr><td>Fiorella Mannoia</td><td>Le Notti Di Maggio</td></tr>
+<tr><td>Fiorella Mannoia</td><td>Le notti di Maggio (Strumentale)</td></tr>
+<tr><td>Fiorella Mannoia</td><td>Mariposa - con cori</td></tr>
+<tr><td>Fiorella Mannoia</td><td>Quello che le donne non dicono</td></tr>
+<tr><td>Fiorello</td><td>Finalmente tu (Strumentale)</td></tr>
+<tr><td>FORSE</td><td>Tommaso Paradiso</td></tr>
+<tr><td>Francesca Michielin</td><td>Distratto</td></tr>
+<tr><td>Francesco Baccini e Ladri di Biciclette</td><td>Sotto questo sole (Strumentale)</td></tr>
+<tr><td>Francesco De Gregori</td><td>Generale (Strumentale)</td></tr>
+<tr><td>Francesco De Gregori</td><td>La donna Cannone</td></tr>
+<tr><td>FRANCESCO DE GREGORI</td><td>RIMMEL .part (Strumentale)</td></tr>
+<tr><td>Francesco De Gregori</td><td>Rimmel</td></tr>
+<tr><td>Francesco Gabbani</td><td>Occidentali's Karma</td></tr>
+<tr><td>FRANCESCO GUCCINI</td><td>CIRANO (Strumentale)</td></tr>
+<tr><td>FRANCESCO GUCCINI</td><td>ESKIMO (Strumentale)</td></tr>
+<tr><td>Francesco Guccini</td><td>Farewell</td></tr>
+<tr><td>Francesco Nuti</td><td>Sarà per te (Strumentale)</td></tr>
+<tr><td>Francesco Renga</td><td>Il mio giorno più bello nel mondo</td></tr>
+<tr><td>FRANCESCO RENGA</td><td>RACCONTAMI (Strumentale)</td></tr>
+<tr><td>Francesco Renga</td><td>Tracce di te</td></tr>
+<tr><td>Francesco Renga</td><td>Vivendo Adesso</td></tr>
+<tr><td>Franco Battiato</td><td>L' era del Cinghiale bianco</td></tr>
+<tr><td>Franco Battiato</td><td>La Cura</td></tr>
+<tr><td>Franco Battiato</td><td>La stagione dell'amore</td></tr>
+<tr><td>Franco Battiato &amp; Alice</td><td>I Treni di Tozeur</td></tr>
+<tr><td>Franco Califano</td><td>Io nun piango (Strumentale)</td></tr>
+<tr><td>Franco Califano</td><td>La Mia Libertà</td></tr>
+<tr><td>Franco Simone</td><td>Respiro (</td></tr>
+<tr><td>Franco Simone</td><td>Respiro (Strumentale)</td></tr>
+<tr><td>Fred Bongusto</td><td>Spaghetti a Detroit (Strumentale)</td></tr>
+<tr><td>Fred Buscaglione</td><td>Eri Piccola</td></tr>
+<tr><td>Fred Buscaglione</td><td>Guarda Che Luna</td></tr>
+<tr><td>FRED DE PALMA</td><td>EXTASI (Strumentale)</td></tr>
+<tr><td>Fulminacci</td><td>Stupida Sfortuna</td></tr>
+<tr><td>Gabry Ponte</td><td>Tutta L' (Strumentale)</td></tr>
+<tr><td>Gaia</td><td>Bossa nostra</td></tr>
+<tr><td>Gaia</td><td>Chiamo io chiami tu con cori (Strumentale)</td></tr>
+<tr><td>Gatto Panceri</td><td>Mia</td></tr>
+<tr><td>Gemelli Diversi</td><td>Mary</td></tr>
+<tr><td>Gemelli Diversi</td><td>Mary con cori (Strumentale)</td></tr>
+<tr><td>Gemelli Diversi</td><td>Un attimo ancora</td></tr>
+<tr><td>Gerardina Trovato</td><td>Gechi e Vampiri</td></tr>
+<tr><td>Gerardina Trovato</td><td>Gechi e Vampiri (Strumentale)</td></tr>
+<tr><td>Ghali</td><td>Paprika con cori (Strumentale)</td></tr>
+<tr><td>GIANLUCA GRIGNANI</td><td>DESTINAZIONE PARADISO (Strumentale)</td></tr>
+<tr><td>Gianluca Grignani</td><td>Destinazione Paradiso</td></tr>
+<tr><td>Gianluca Grignani</td><td>Falco a metà (Strumentale)</td></tr>
+<tr><td>Gianluca Grignani</td><td>L'aiuola</td></tr>
+<tr><td>Gianluca Grignani</td><td>La mia storia tra le dita</td></tr>
+<tr><td>Gianna Nannini</td><td>Amandoti</td></tr>
+<tr><td>Gianna Nannini</td><td>America</td></tr>
+<tr><td>GIANNA NANNINI</td><td>AMERICA - (STRUMENTI REALI)</td></tr>
+<tr><td>Gianna Nannini</td><td>America (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>Bello e Impossibile (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>Bello Impossibile</td></tr>
+<tr><td>Gianna Nannini</td><td>Fotoromanza</td></tr>
+<tr><td>Gianna Nannini</td><td>Fotoromanza (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>I Maschi (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>Meravigliosa creatura</td></tr>
+<tr><td>Gianna Nannini</td><td>Meravigliosa Creatura (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>Panorama (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>Sei Nell'anima</td></tr>
+<tr><td>Gianna Nannini</td><td>Sei nell'anima (Strumentale)</td></tr>
+<tr><td>Gianna Nannini</td><td>Silenzio (Strumentale)</td></tr>
+<tr><td>Gianna Nannini, Edoardo Bennato</td><td>Un'estate Italiana (Notti Magiche) (Strumentale)</td></tr>
+<tr><td>Gianni Bella</td><td>Non si può morire dentro</td></tr>
+<tr><td>GIANNI DRUDI</td><td>FIKI FIKI</td></tr>
+<tr><td>Gianni Morandi</td><td>Banane e Lamponi</td></tr>
+<tr><td>GIANNI MORANDI</td><td>C'ERA UN RAGAZZO</td></tr>
+<tr><td>Gianni Morandi</td><td>Canzoni Stonate</td></tr>
+<tr><td>Gianni Morandi</td><td>In ginocchio da te</td></tr>
+<tr><td>GIANNI MORANDI</td><td>LA OLA (Strumentale)</td></tr>
+<tr><td>Gianni Morandi</td><td>Ma chi se ne importa</td></tr>
+<tr><td>Gianni Morandi</td><td>Occhi di ragazza</td></tr>
+<tr><td>Gianni Morandi</td><td>Parla più piano (Piano)</td></tr>
+<tr><td>Gianni Morandi</td><td>Scende La Pioggia</td></tr>
+<tr><td>Gianni Morandi</td><td>Se perdo anche te</td></tr>
+<tr><td>Gianni Morandi</td><td>Uno su mille</td></tr>
+<tr><td>Gianni Morandi</td><td>Uno su mille (Strumentale)</td></tr>
+<tr><td>Gianni Morandi &amp; Amii Stewart</td><td>Grazie Perchè</td></tr>
+<tr><td>Gianni Morandi e Barbara Cola</td><td>In amore</td></tr>
+<tr><td>Gianni Morandi, Barbara Cola</td><td>In Amore (ti supererò) (Strumentale)</td></tr>
+<tr><td>Gianni Pettenati</td><td>Bandiera Gialla</td></tr>
+<tr><td>Gianni Togni</td><td>Luna</td></tr>
+<tr><td>Gianni Togni</td><td>Luna</td></tr>
+<tr><td>Gigi D'Alessio</td><td>Non dirgli mai</td></tr>
+<tr><td>Gigi D'alessio</td><td>Non dirgli mai (Strumentale)</td></tr>
+<tr><td>Gigi D'Alessio &amp; Anna Tatangelo</td><td>Un Nuovo Bacio</td></tr>
+<tr><td>Gigi D'Alessio &amp; Anna Tatangelo</td><td>Un Nuovo Bacio</td></tr>
+<tr><td>Gigi D'Alessio e Anna Tatangelo</td><td>Il Mondo è Mio</td></tr>
+<tr><td>Gigliola Cinquetti</td><td>Alle Porte Del Sole</td></tr>
+<tr><td>Gigliola Cinquetti</td><td>Non ho l'età</td></tr>
+<tr><td>GINO PAOLI</td><td>4 AMICI AL BAR (Strumentale)</td></tr>
+<tr><td>Gino Paoli</td><td>Il cielo in una stanza</td></tr>
+<tr><td>Gino Paoli</td><td>La Gatta</td></tr>
+<tr><td>Gino Paoli</td><td>Senza Fine</td></tr>
+<tr><td>GINO PAOLI</td><td>UNA LUNGA STORIA D'AMORE (Strumentale)</td></tr>
+<tr><td>Gino Paoli</td><td>Una lunga storia d'amore</td></tr>
+<tr><td>Giorgia</td><td>C'è da fare</td></tr>
+<tr><td>Giorgia</td><td>Cambiare</td></tr>
+<tr><td>Giorgia</td><td>Come Saprei</td></tr>
+<tr><td>Giorgia</td><td>Di sole e d'azzurro</td></tr>
+<tr><td>Giorgia</td><td>Di sole e d'azzurro (Strumentale)</td></tr>
+<tr><td>Giorgia</td><td>E Poi</td></tr>
+<tr><td>Giorgia</td><td>E' l'amore che conta</td></tr>
+<tr><td>Giorgia</td><td>Girasole</td></tr>
+<tr><td>Giorgia</td><td>Gocce di memoria</td></tr>
+<tr><td>Giorgia</td><td>Il Mio Giorno Migliore</td></tr>
+<tr><td>Giorgia</td><td>La cura per me (Strumentale)</td></tr>
+<tr><td>Giorgia</td><td>Non mi ami</td></tr>
+<tr><td>Giorgia</td><td>Oronero</td></tr>
+<tr><td>Giorgia</td><td>Parlami D'amore</td></tr>
+<tr><td>Giorgia</td><td>Quando una stella muore</td></tr>
+<tr><td>Giorgia</td><td>Scelgo Ancora Te</td></tr>
+<tr><td>Giorgia</td><td>Strano il mio destino</td></tr>
+<tr><td>Giorgia</td><td>Strano il mio destino (Strumentale)</td></tr>
+<tr><td>Giorgia</td><td>Vivi Davvero</td></tr>
+<tr><td>Giuliano Palma</td><td>Pensiero d'amore (Mal) (Strumentale)</td></tr>
+<tr><td>Giuni Russo</td><td>Alghero (Strumentale)</td></tr>
+<tr><td>GIUNI RUSSO</td><td>UN'ESTATE AL MARE (Strumentale)</td></tr>
+<tr><td>GIUSY FERRERI</td><td>NON TI SCORDAR MAI DI ME (Strumentale)</td></tr>
+<tr><td>Giusy Ferreri</td><td>Novembre</td></tr>
+<tr><td>Giusy Ferreri</td><td>Ti porto a cena con me</td></tr>
+<tr><td>Giusy Ferreri &amp; Sean Kingstone Tagagi &amp; Ketra</td><td>Amore a Caporeira</td></tr>
+<tr><td>Gruppo</td><td>Tropicana</td></tr>
+<tr><td>Gruppo</td><td>Tropicana - con cori (Strumentale)</td></tr>
+<tr><td>Heather Parisi</td><td>Cicale</td></tr>
+<tr><td>I Dik Dik</td><td>Il primo giorno di primavera (Strumentale)</td></tr>
+<tr><td>I Giganti</td><td>Una ragazza in due (Mai le dirò) (Strumentale)</td></tr>
+<tr><td>I NOMADI</td><td>UN PUGNO DI SABBIA (Strumentale)</td></tr>
+<tr><td>I Santo California</td><td>Tornerò (Strumentale)</td></tr>
+<tr><td>I' te vurria vasà</td><td>(Strumentale)</td></tr>
+<tr><td>IL BALLO DI SIMONE</td><td>Giuliano e i Notturni</td></tr>
+<tr><td>Il Pagante</td><td>Settimana Bianca</td></tr>
+<tr><td>Il Volo</td><td>Capolavoro (Strumentale)</td></tr>
+<tr><td>il Volo</td><td>Grande Amore</td></tr>
+<tr><td>Il Volo</td><td>Il Mondo</td></tr>
+<tr><td>Il Volo</td><td>L'amore si muove</td></tr>
+<tr><td>IRAMA</td><td>PAMPAMPAMPAMPAMPAMPAMPAM (Strumentale)</td></tr>
+<tr><td>Irama &amp; Giorgia</td><td>Buio</td></tr>
+<tr><td>Irene Grandi</td><td>Bum Bum - con cori (Strumentale)</td></tr>
+<tr><td>Irene Grandi</td><td>come tu mi vuoi</td></tr>
+<tr><td>Irene Grandi</td><td>La cometa di halley</td></tr>
+<tr><td>Irene Grandi</td><td>La Tua Ragazza Sempre</td></tr>
+<tr><td>Irene Grandi</td><td>La tua ragazza sempre (Strumentale)</td></tr>
+<tr><td>Irene Grandi</td><td>Sono come tu mi vuoi (Strumentale)</td></tr>
+<tr><td>Iva Zanicchi</td><td>Testarda Io</td></tr>
+<tr><td>Iva Zanicchi</td><td>Zingara</td></tr>
+<tr><td>Iva Zanicchi</td><td>Zingara</td></tr>
+<tr><td>IVAN CATTANEO</td><td>MEDLEY TWIST SKA (Strumentale)</td></tr>
+<tr><td>Ivan Graziani</td><td>Firenze (canzone triste)</td></tr>
+<tr><td>IVAN GRAZIANI</td><td>LUGANO ADDIO (Strumentale)</td></tr>
+<tr><td>Ivana Spagna</td><td>Gente come noi</td></tr>
+<tr><td>Ivana Spagna</td><td>Il Cerchio Della Vita</td></tr>
+<tr><td>Ivano Fossati</td><td>La mia banda suona il Rock</td></tr>
+<tr><td>Ivano Fossati</td><td>La mia banda suona il rock (Strumentale)</td></tr>
+<tr><td>J-AX</td><td>Tutto Tua Madre</td></tr>
+<tr><td>Jalisse</td><td>Fiumi di parole</td></tr>
+<tr><td>Jalisse</td><td>Fiumi di Parole (Strumentale)</td></tr>
+<tr><td>JEEG ROBOT D'ACCIAIO</td><td>(Strumentale)</td></tr>
+<tr><td>José Feliciano</td><td>Feliz Navidad (Strumentale)</td></tr>
+<tr><td>Jovanotti</td><td>A te</td></tr>
+<tr><td>Jovanotti</td><td>A te (Strumentale)</td></tr>
+<tr><td>Jovanotti</td><td>Bella</td></tr>
+<tr><td>JOVANOTTI</td><td>IL PIU' GRANDE SPETTACOLO DOPO IL BIG BANG (Strumentale)</td></tr>
+<tr><td>Jovanotti</td><td>Mi fido di te</td></tr>
+<tr><td>Jovanotti</td><td>Mi fido di te (Strumentale)</td></tr>
+<tr><td>Jovanotti</td><td>Occhi a cuore</td></tr>
+<tr><td>JOVANOTTI</td><td>SE LO SENTI LO SAI (Strumentale)</td></tr>
+<tr><td>JOVANOTTI</td><td>SO SOLO CHE LA VITA</td></tr>
+<tr><td>Jovanotti</td><td>Un raggio di sole</td></tr>
+<tr><td>JOVANOTTI &amp; SIXPM</td><td>I LOVE YOU BABY (Strumentale)</td></tr>
+<tr><td>JOVANOTTI &amp; SIXPM</td><td>SENSIBILE ALL'ESTATE (Strumentale)</td></tr>
+<tr><td>julio Iglesias</td><td>Pensami</td></tr>
+<tr><td>Julio Iglesias</td><td>Se Mi Lasci Non Vale</td></tr>
+<tr><td>Natalie Imbruglia</td><td>Torn 4k</td></tr>
+<tr><td>Lady Gaga &amp; Bradley Cooper</td><td>Shallow</td></tr>
+<tr><td></td><td>Pollon combina guai</td></tr>
+<tr><td>LITTLE TONY</td><td>CUORE MATTO</td></tr>
+<tr><td>Barbra Streisand</td><td>Woman in Love (Tonalità -1 ⧸ Lower Key)</td></tr>
+<tr><td>Evanescence</td><td>My Immortal</td></tr>
+<tr><td>Frank Sinatra</td><td>My Way</td></tr>
+<tr><td>Whitney Houston</td><td>I Will Always Love You (Tonalità -2 ⧸ Lower Key )</td></tr>
+<tr><td>Anna Pepe</td><td>Désolée (Strumentale)</td></tr>
+<tr><td>Claudio Baglioni</td><td>Mille giorni di te e di me (Strumentale)</td></tr>
+<tr><td>Ivan Graziani</td><td>Maledette Malelingue (Strumentale)</td></tr>
+<tr><td>Lu Colombo</td><td>Maracaibo (Strumentale)</td></tr>
+<tr><td>Lucio Battisti</td><td>Prendila così (Strumentale)</td></tr>
+<tr><td>Tony Renis</td><td>Quando Quando Quando (Strumentale)</td></tr>
+<tr><td>Romina Power</td><td>Il Ballo del qua qua</td></tr>
+<tr><td>EROS RAMAZZOTTI</td><td>SE BASTASSE UNA CANZONE</td></tr>
+<tr><td>ORNELLA VANONI</td><td>VAI VALENTINA</td></tr>
+<tr><td>Karima</td><td>Come in ogni ora</td></tr>
+<tr><td>Kekko Dany</td><td>Tu Tu Tu...Ta Ta Ta (Strumentale)</td></tr>
+<tr><td>King Africa</td><td>La Bomba</td></tr>
+<tr><td>L'Uomo Tigre (Sigla Cartone Animato)</td><td></td></tr>
+<tr><td>Lando Fiorini</td><td>La Società Dei Magnaccioni</td></tr>
+<tr><td>Lando Fiorini</td><td>Roma nun fà la stupida stasera</td></tr>
+<tr><td>Lara Fabian</td><td>Adagio</td></tr>
+<tr><td>Lara Fabian</td><td>Adagio (Strumentale)</td></tr>
+<tr><td>Lara Fabian</td><td>Perdere L'amore</td></tr>
+<tr><td>Laura Bono</td><td>Io non credo nei miracoli</td></tr>
+<tr><td>Laura Pausini</td><td>Benvenuto</td></tr>
+<tr><td>Laura Pausini</td><td>Celeste</td></tr>
+<tr><td>Laura Pausini</td><td>Cinque giorni</td></tr>
+<tr><td>Laura Pausini</td><td>Come se non fosse stato mai amore</td></tr>
+<tr><td>Laura Pausini</td><td>Destinazione Paradiso</td></tr>
+<tr><td>LAURA PAUSINI</td><td>E RITORNO DA TE (Strumentale)</td></tr>
+<tr><td>Laura Pausini</td><td>Gente</td></tr>
+<tr><td>Laura Pausini</td><td>Il Mondo che vorrei</td></tr>
+<tr><td>Laura Pausini</td><td>Il primo passo sulla luna (Strumentale)</td></tr>
+<tr><td>Laura Pausini</td><td>In assenza di te</td></tr>
+<tr><td>Laura Pausini</td><td>Incancellabile</td></tr>
+<tr><td>Laura Pausini</td><td>Invece No</td></tr>
+<tr><td>Laura Pausini</td><td>Io Canto</td></tr>
+<tr><td>Laura Pausini</td><td>La mia storia tra le dita</td></tr>
+<tr><td>Laura Pausini</td><td>La solitudine</td></tr>
+<tr><td>Laura Pausini</td><td>Le Cose Che Vivi</td></tr>
+<tr><td>Laura Pausini</td><td>Non c'è</td></tr>
+<tr><td>Laura Pausini</td><td>Primavera in Anticipo</td></tr>
+<tr><td>Laura Pausini</td><td>Resta in ascolto</td></tr>
+<tr><td>Laura Pausini</td><td>Resta In Ascolto</td></tr>
+<tr><td>Laura Pausini</td><td>Se non te</td></tr>
+<tr><td>Laura Pausini</td><td>Strani amori</td></tr>
+<tr><td>Laura Pausini</td><td>Tra te e il mare</td></tr>
+<tr><td>Laura Pausini</td><td>Uguale a Lei - She</td></tr>
+<tr><td>Laura Pausini</td><td>Un amico è così</td></tr>
+<tr><td>Laura Pausini</td><td>Un'emergenza d'amore</td></tr>
+<tr><td>Laura Pausini</td><td>Vivimi</td></tr>
+<tr><td>Laura Pausini, Tiziano Ferro</td><td>Non Me lo so spiegare</td></tr>
+<tr><td>LAZZA, TAKAGI &amp; KETRA</td><td>PANICO (Strumentale)</td></tr>
+<tr><td>LE VIBRAZIONI</td><td>DEDICATO A TE (Strumentale)</td></tr>
+<tr><td>Levante</td><td>Sei tu</td></tr>
+<tr><td>Ligabue</td><td>Balliamo sul mondo - (reupload) (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>BAMBOLINA E BARRACUDA (Strumentale)</td></tr>
+<tr><td>Ligabue</td><td>Certe Notti</td></tr>
+<tr><td>Ligabue</td><td>Certe notti (Strumentale)</td></tr>
+<tr><td>Ligabue</td><td>Eri Bellissima</td></tr>
+<tr><td>LIGABUE</td><td>HAI UN MOMENTO DIO (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>IL SALE DELLA TERRA</td></tr>
+<tr><td>LIGABUE</td><td>LIBERA NOS A MALO (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>NON CAMBIEREI QUESTA VITA PER NESSUN'ALTRA re-upload (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>NON CAMBIEREI QUESTA VITA PER NESSUN'ALTRA (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>NON E' TEMPO PER NOI (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>PER SEMPRE - (STRUMENTI REALI)</td></tr>
+<tr><td>Ligabue</td><td>Piccola stella senza cielo</td></tr>
+<tr><td>LIGABUE</td><td>PICCOLA STELLA SENZA CIELO - (STRUMENTI REALI)</td></tr>
+<tr><td>LIGABUE</td><td>SALVIAMOCI LA PELLE (Strumentale)</td></tr>
+<tr><td>Ligabue</td><td>Sogni di Rock 'n Roll (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>URLANDO CONTRO IL CIELO (Strumentale)</td></tr>
+<tr><td>LIGABUE</td><td>VIVO, MORTO O X (Strumentale)</td></tr>
+<tr><td>LIMAHL</td><td>THE NEVER ENDING STORY</td></tr>
+<tr><td>Lino Toffolo</td><td>Johnny Bassotto</td></tr>
+<tr><td>Lisa</td><td>Sempre</td></tr>
+<tr><td>Litfiba</td><td>Cangaceiro</td></tr>
+<tr><td>Litfiba</td><td>Fata Morgana (Strumentale)</td></tr>
+<tr><td>Litfiba</td><td>Istanbul</td></tr>
+<tr><td>Litfiba</td><td>Tziganata</td></tr>
+<tr><td>Little Tony</td><td>Cuore Matto</td></tr>
+<tr><td>Little Tony</td><td>Riderà (Strumentale)</td></tr>
+<tr><td>Loredana Bertè</td><td>Il mare d'inverno</td></tr>
+<tr><td>Loredana Bertè</td><td>Luna</td></tr>
+<tr><td>Loredana Bertè</td><td>Mi Manchi</td></tr>
+<tr><td>Loredana Bertè</td><td>Sei Bellissima (Strumentale)</td></tr>
+<tr><td>Loredana Berté</td><td>E la luna bussò</td></tr>
+<tr><td>Loredana Berté</td><td>In Alto Mare</td></tr>
+<tr><td>Loredana Berté</td><td>Non sono una signora</td></tr>
+<tr><td>Loredana Berté</td><td>Sei Bellissima</td></tr>
+<tr><td>LORELLA CUCCARINI</td><td>LA NOTTE VOLA (Strumentale)</td></tr>
+<tr><td>Lorella Cuccarini</td><td>La Notte Vola Con Guida Vocale</td></tr>
+<tr><td>Loretta Goggi</td><td>Dirtelo non dirtelo</td></tr>
+<tr><td>Loretta Goggi</td><td>L'aria del sabato sera</td></tr>
+<tr><td>Loretta Goggi</td><td>Maledetta Primavera</td></tr>
+<tr><td>Loretta Goggi</td><td>Pieno d'amore</td></tr>
+<tr><td>Loretta Goggi</td><td>Solo un'amica</td></tr>
+<tr><td>Los Lobos</td><td>La Bamba</td></tr>
+<tr><td>Lou Monte</td><td>Lazy Mary (Luna Mezz'o Mare)</td></tr>
+<tr><td>Luca Dirisio</td><td>Calma e sangue freddo</td></tr>
+<tr><td>Luciano Pavarotti</td><td>Nessun Dorma</td></tr>
+<tr><td>Lucio Battisti</td><td>E penso a te (Strumentale)</td></tr>
+<tr><td>Lucio Battisti</td><td>Fiori rosa, fiori di pesco (Strumentale)</td></tr>
+<tr><td>LUCIO BATTISTI</td><td>I GIARDINI DI MARZO (Strumentale)</td></tr>
+<tr><td>Lucio Battisti</td><td>Il tempo di Morire (Strumentale)</td></tr>
+<tr><td>Lucio Battisti</td><td>Innocenti Evasioni</td></tr>
+<tr><td>Lucio Battisti</td><td>Pensieri e parole</td></tr>
+<tr><td>Lucio Battisti</td><td>Sì, viaggiare (Strumentale)</td></tr>
+<tr><td>LUCIO BATTISTI</td><td>VENDO CASA (Strumentale)</td></tr>
+<tr><td>Lucio Corsi</td><td>Notte di Natale</td></tr>
+<tr><td>Lucio Corsi</td><td>Sigarette (Strumentale)</td></tr>
+<tr><td>Lucio Corsi</td><td>Situazione complicata</td></tr>
+<tr><td>Lucio Dalla</td><td>4 Marzo 1943</td></tr>
+<tr><td>Lucio Dalla</td><td>Anna e Marco (Strumentale)</td></tr>
+<tr><td>Lucio Dalla</td><td>Attenti al lupo</td></tr>
+<tr><td>Lucio Dalla</td><td>Canzone</td></tr>
+<tr><td>Lucio Dalla</td><td>Caruso (Piano)</td></tr>
+<tr><td>Lucio Dalla</td><td>Come è profondo il mare (Strumentale)</td></tr>
+<tr><td>Lucio Dalla</td><td>Futura (Strumentale)</td></tr>
+<tr><td>Lucio Dalla</td><td>La sera dei miracoli</td></tr>
+<tr><td>Lucio Dalla</td><td>Piazza Grande</td></tr>
+<tr><td>Luigi Tenco</td><td>Vedrai Vedrai</td></tr>
+<tr><td>Luis Miguel</td><td>Ragazzi di oggi</td></tr>
+<tr><td>LUNAPOP</td><td>QUALCOSA DI GRANDE (Strumentale)</td></tr>
+<tr><td>Lùnapop</td><td>50 Special</td></tr>
+<tr><td>Lùnapop</td><td>Vorrei</td></tr>
+<tr><td>MADAME</td><td>ARANCIATA (Strumentale)</td></tr>
+<tr><td>Mal</td><td>Parlami D'amore Mariù</td></tr>
+<tr><td>Malika Ayane</td><td>Animali Notturni</td></tr>
+<tr><td>Malika Ayane</td><td>Come Foglie</td></tr>
+<tr><td>Malika Ayane</td><td>Ricomincio da qui</td></tr>
+<tr><td>MALIKA AYANE</td><td>UNA RAGAZZA (Strumentale)</td></tr>
+<tr><td>Mango</td><td>Amore per te (Strumentale)</td></tr>
+<tr><td>MANGO</td><td>LA RONDINE (Strumentale)</td></tr>
+<tr><td>Mango</td><td>Mediterraneo (Strumentale)</td></tr>
+<tr><td>Mango</td><td>Oro</td></tr>
+<tr><td>Mara Sattei</td><td>Piango in Discoteca (Strumentale)</td></tr>
+<tr><td>Marcella Bella</td><td>Dopo la tempesta</td></tr>
+<tr><td>Marcella Bella</td><td>Io Domani</td></tr>
+<tr><td>Marcella Bella</td><td>Montagne Verdi</td></tr>
+<tr><td>Marcella Bella</td><td>Nessuno mai</td></tr>
+<tr><td>Marcella Bella</td><td>Pelle Diamante (Strumentale)</td></tr>
+<tr><td>Marcella e Gianni Bella</td><td>L'ultima Poesia (Strumentale)</td></tr>
+<tr><td>Marco Ferradini</td><td>Teorema</td></tr>
+<tr><td>Marco Ferradini</td><td>Teorema (Strumentale)</td></tr>
+<tr><td>Marco Masini</td><td>Bella Stronza</td></tr>
+<tr><td>Marco Masini</td><td>Cenerentola Innamorata</td></tr>
+<tr><td>Marco Masini</td><td>Ci Vorrebbe il Mare</td></tr>
+<tr><td>Marco Masini</td><td>Disperato</td></tr>
+<tr><td>Marco Masini</td><td>Perché lo fai</td></tr>
+<tr><td>Marco masini</td><td>T'innamorerai</td></tr>
+<tr><td>Marco Mengoni</td><td>In un Giorno Qualunque</td></tr>
+<tr><td>Marco Mengoni</td><td>L' essenziale</td></tr>
+<tr><td>Marco Mengoni</td><td>Ti ho voluto bene veramente</td></tr>
+<tr><td>Marco Mengoni, Elodie</td><td>Pazza Musica (Strumentale)</td></tr>
+<tr><td>Mariah Carey</td><td>All I Want for Christmas Is You (CON CORI)</td></tr>
+<tr><td>Marina Rei</td><td>Primavera</td></tr>
+<tr><td>Mario Rosini</td><td>Sei La Vita Mia</td></tr>
+<tr><td>Mario Tessuto</td><td>Lisa dagli occhi blu</td></tr>
+<tr><td>MASSIMO RANIERI</td><td>'O SURDATO 'NNAMMURATO</td></tr>
+<tr><td>Massimo Ranieri</td><td>A Rumba De Scugnizzi</td></tr>
+<tr><td>Massimo Ranieri</td><td>Erba di casa mia</td></tr>
+<tr><td>Massimo Ranieri</td><td>Erba di casa mia</td></tr>
+<tr><td>Massimo Ranieri</td><td>Guapparia</td></tr>
+<tr><td>Massimo Ranieri</td><td>La Vestaglia</td></tr>
+<tr><td>Massimo Ranieri</td><td>O'Sole mio</td></tr>
+<tr><td>Massimo Ranieri</td><td>Perdere l'amore</td></tr>
+<tr><td>Massimo Ranieri</td><td>Perdere l'amore (Strumentale)</td></tr>
+<tr><td>Massimo Ranieri</td><td>Rose rosse</td></tr>
+<tr><td>Massimo Ranieri</td><td>Rose Rosse (Strumentale)</td></tr>
+<tr><td>Massimo Ranieri</td><td>Vent'anni</td></tr>
+<tr><td>Matia Bazar</td><td>Brivido caldo</td></tr>
+<tr><td>Matia Bazar</td><td>C'è tutto Un Mondo Intorno</td></tr>
+<tr><td>Matia Bazar</td><td>Cavallo Bianco</td></tr>
+<tr><td>Matia Bazar</td><td>Dedicato a te</td></tr>
+<tr><td>Matia Bazar</td><td>Messaggio d'Amore</td></tr>
+<tr><td>Matia Bazar</td><td>Per Un'Ora D'Amore</td></tr>
+<tr><td>Matia Bazar</td><td>Ti Sento</td></tr>
+<tr><td>Matia Bazar</td><td>Vacanze Romane</td></tr>
+<tr><td>Matteo Milazzo</td><td>Bambola (Strumentale)</td></tr>
+<tr><td>Max Gazzè</td><td>Mentre dormi</td></tr>
+<tr><td>MAX PEZZALI E 883</td><td>CUMULI (Strumentale)</td></tr>
+<tr><td>Max Pezzali, Club Dogo</td><td>Con un Deca (Strumentale)</td></tr>
+<tr><td>Medley Ricchi e Poveri Dance</td><td>(Strumentale)</td></tr>
+<tr><td>Medley Ska</td><td>Il Ballo di Simone, Gianna, Ho in mente te</td></tr>
+<tr><td>Merk &amp; Kremont, Serena Brancale, The Kolors</td><td>Partenope</td></tr>
+<tr><td>MI VENDO</td><td>Renato Zero (Cult 70s)</td></tr>
+<tr><td>Mia Martini</td><td>Almeno tu nell'universo</td></tr>
+<tr><td>Mia Martini</td><td>Donna</td></tr>
+<tr><td>Mia Martini</td><td>Donna Sola</td></tr>
+<tr><td>Mia Martini</td><td>E non finisce mica il cielo</td></tr>
+<tr><td>Mia Martini</td><td>Gli Uomini Non Cambiano</td></tr>
+<tr><td>Mia Martini</td><td>Gli uomini non cambiano (Strumentale)</td></tr>
+<tr><td>Mia Martini</td><td>La Nevicata del '56</td></tr>
+<tr><td>MIA MARTINI</td><td>MINUETTO (Strumentale)</td></tr>
+<tr><td>Mia Martini</td><td>Minuetto</td></tr>
+<tr><td>Mia Martini</td><td>Piccolo Uomo</td></tr>
+<tr><td>Mia Martini</td><td>Quante Volte</td></tr>
+<tr><td>Michael Jackson</td><td>Billie Jean</td></tr>
+<tr><td>Michele Zarrillo</td><td>cinque giorni</td></tr>
+<tr><td>Michele Zarrillo</td><td>L'elefante e la farfalla</td></tr>
+<tr><td>Michele Zarrillo</td><td>La notte dei pensieri</td></tr>
+<tr><td>Michele Zarrillo</td><td>La notte dei pensieri (Strumentale)</td></tr>
+<tr><td>Michele Zarrillo</td><td>Una rosa blu</td></tr>
+<tr><td>Mietta</td><td>Fare l'amore</td></tr>
+<tr><td>Mietta e Amedeo Minghi</td><td>Vattene amore</td></tr>
+<tr><td>Miguel Bosè</td><td>Se tu non torni</td></tr>
+<tr><td>Miguel Bosè</td><td>Se tu non torni (Strumentale)</td></tr>
+<tr><td>Milva</td><td>La Filanda</td></tr>
+<tr><td>MIna</td><td>Amore unico amore</td></tr>
+<tr><td>Mina</td><td>Anche un Uomo</td></tr>
+<tr><td>Mina</td><td>Ancora Ancora Ancora</td></tr>
+<tr><td>MINA</td><td>Brava</td></tr>
+<tr><td>MINA</td><td>E Poi</td></tr>
+<tr><td>Mina</td><td>E se domani</td></tr>
+<tr><td>Mina</td><td>Grande grande grande</td></tr>
+<tr><td>Mina</td><td>L'importante è finire</td></tr>
+<tr><td>Mina</td><td>Mi sei scoppiato dentro al cuore</td></tr>
+<tr><td>Mina</td><td>Mi sei scoppiato dentro al cuore (Strumentale)</td></tr>
+<tr><td>Mina</td><td>Neve</td></tr>
+<tr><td>MINA</td><td>Portati via</td></tr>
+<tr><td>Mina</td><td>Se telefonando</td></tr>
+<tr><td>MINA</td><td>Se tu non Fossi qui</td></tr>
+<tr><td>MINA</td><td>Tintarella Di Luna</td></tr>
+<tr><td>MINA</td><td>Verde Luna</td></tr>
+<tr><td>Mina</td><td>Viva Lei</td></tr>
+<tr><td>MINA</td><td>Volami nel cuore</td></tr>
+<tr><td>Mina</td><td>Vorrei che fosse amore</td></tr>
+<tr><td>Mina Adriano Celentano</td><td>Brivido Felino</td></tr>
+<tr><td>Mina Celentano</td><td>Acqua e Sale</td></tr>
+<tr><td>MINA Celentano</td><td>Amami Amami</td></tr>
+<tr><td>MINA e Alberto Lupo</td><td>Parole parole parole</td></tr>
+<tr><td>Mino Reitano</td><td>Avevo un cuore</td></tr>
+<tr><td>MODA' feat. JARABE DE PALO</td><td>COME UN PITTORE (Strumentale)</td></tr>
+<tr><td>Modà</td><td>Come un pittore</td></tr>
+<tr><td>Modà</td><td>Tappeto Di Fragole</td></tr>
+<tr><td>Modà Feat Emma</td><td>Arriverà</td></tr>
+<tr><td>Morandi Ruggeri Tozzi</td><td>Si può dare di più</td></tr>
+<tr><td>Mr Rain</td><td>Sangiovanni - La fine del mondo (Strumentale)</td></tr>
+<tr><td>Mr.Rain</td><td>Fiori di Chernobyl</td></tr>
+<tr><td>Måneskin</td><td>Beggin'</td></tr>
+<tr><td>Nada</td><td>Il Cuore è Uno Zingaro</td></tr>
+<tr><td>Nada</td><td>Ma Che freddo fa</td></tr>
+<tr><td>Nada</td><td>Re di Denari</td></tr>
+<tr><td>Neffa</td><td>Cambierà</td></tr>
+<tr><td>Neffa</td><td>La mia signorina (Strumentale)</td></tr>
+<tr><td>Neffa</td><td>Lontano dal tuo sole</td></tr>
+<tr><td>Neffa &amp; i messaggeri della Dopa</td><td>Aspettando il sole (Strumentale)</td></tr>
+<tr><td>NEGRAMARO</td><td>ESTATE (Strumentale)</td></tr>
+<tr><td>Negramaro</td><td>Estate</td></tr>
+<tr><td>Negramaro</td><td>Mentre tutto scorre</td></tr>
+<tr><td>Negramaro</td><td>Meraviglioso</td></tr>
+<tr><td>NEGRAMARO</td><td>NUVOLE E LENZUOLA (Strumentale)</td></tr>
+<tr><td>Negramaro</td><td>Solo Tre minuti</td></tr>
+<tr><td>NEGRITA</td><td>GIOIA INFINITA (Strumentale)</td></tr>
+<tr><td>Negrita</td><td>Mama Maé (Strumentale)</td></tr>
+<tr><td>NEK</td><td>FATTI AVANTI AMORE (Strumentale)</td></tr>
+<tr><td>Nek</td><td>Laura non c'è</td></tr>
+<tr><td>Nek</td><td>Se Telefonando</td></tr>
+<tr><td>NEK</td><td>SE UNA REGOLA C'E (Strumentale)</td></tr>
+<tr><td>Nek Ft Laura Pausini</td><td>Sei solo tu</td></tr>
+<tr><td>New Trolls</td><td>Quella Carezza Della Sera</td></tr>
+<tr><td>Nicola Arigliano</td><td>Venti Km al giorno (Strumentale)</td></tr>
+<tr><td>Nicola Di Bari</td><td>Chitarra suona più piano (Piano)</td></tr>
+<tr><td>Nicola Di Bari</td><td>Il Cuore è Uno Zingaro</td></tr>
+<tr><td>Nicola Di Bari</td><td>Il cuore è uno zingaro (Strumentale)</td></tr>
+<tr><td>Nicola Di Bari</td><td>La prima cosa bella (Strumentale)</td></tr>
+<tr><td>Nicola Di Bari</td><td>La prima cosa bella (Strumentale)</td></tr>
+<tr><td>NINO BONOCORE</td><td>SCRIVIMI (Strumentale)</td></tr>
+<tr><td>NINO D'ANGELO</td><td>NAPOLI NAPOLI (Strumentale)</td></tr>
+<tr><td>Nino D'angelo</td><td>Popcorn e patitine (Strumentale)</td></tr>
+<tr><td>Nino Manfredi</td><td>Tanto Pe Cantà</td></tr>
+<tr><td>NOEMI</td><td>BIANCA</td></tr>
+<tr><td>Noemi</td><td>Per Tutta La Vita</td></tr>
+<tr><td>Noemi</td><td>Sono solo parole</td></tr>
+<tr><td>Noemi</td><td>Vuoto a perdere</td></tr>
+<tr><td>Nomadi</td><td>Io vagabondo</td></tr>
+<tr><td>OLIVER ONIONS</td><td>DUNE BUGGY (Strumentale)</td></tr>
+<tr><td>Olivier Onions</td><td>Sandokan</td></tr>
+<tr><td>Olly</td><td>Balorda nostalgia (Strumentale)</td></tr>
+<tr><td>Olly</td><td>Questa domenica (Strumentale)</td></tr>
+<tr><td>Olly &amp; JVLI</td><td>Scarabocchi (Strumentale)</td></tr>
+<tr><td>OMD</td><td>Enola Gay</td></tr>
+<tr><td>Opus</td><td>Live Is Life</td></tr>
+<tr><td>Opus</td><td>Live Is Life clip</td></tr>
+<tr><td>Orietta Berti</td><td>Fin che la barca va</td></tr>
+<tr><td>Orietta Berti</td><td>Via dei Ciclamini</td></tr>
+<tr><td>Ornella Vanoni</td><td>Albergo a ore</td></tr>
+<tr><td>Ornella Vanoni</td><td>Domani è Un Altro Giorno</td></tr>
+<tr><td>Ornella Vanoni</td><td>L'appuntamento (Strumentale)</td></tr>
+<tr><td>Ornella Vanoni</td><td>Senza fine</td></tr>
+<tr><td>Ornella Vanoni &amp; Giusy Ferreri</td><td>Una Ragione Di Più</td></tr>
+<tr><td>Paola &amp; Chiara</td><td>Mare Caos (Strumentale)</td></tr>
+<tr><td>PAOLA &amp; CHIARA feat. BOOMDABASH</td><td>LAMBADA (Strumentale)</td></tr>
+<tr><td>PAOLA E CHIARA</td><td>AMICI COME PRIMA (Strumentale)</td></tr>
+<tr><td>PAOLA E CHIARA</td><td>VAMOS A BAILAR (Strumentale)</td></tr>
+<tr><td>Paola e Chiara</td><td>Vamos a Bailar</td></tr>
+<tr><td>Paolo Conte</td><td>Via con me (Strumentale)</td></tr>
+<tr><td>Paolo Vallesi</td><td>La Forza della vita</td></tr>
+<tr><td>Paolo Vallesi</td><td>Le Persone Inutili</td></tr>
+<tr><td>Parisi Cuccarini Carrà</td><td>Medley sigle anni 80</td></tr>
+<tr><td>Patty Pravo</td><td>Dimmi che non vuoi morire</td></tr>
+<tr><td>Patty Pravo</td><td>La Bambola</td></tr>
+<tr><td>Patty Pravo</td><td>La Bambola (Strumentale)</td></tr>
+<tr><td>Patty Pravo</td><td>Pazza Idea</td></tr>
+<tr><td>Patty Pravo</td><td>Pazza Idea</td></tr>
+<tr><td>Patty Pravo</td><td>Pensiero Stupendo</td></tr>
+<tr><td>Patty Pravo</td><td>Tutt'al più</td></tr>
+<tr><td>Peppino Di Capri</td><td>Champagne (Strumentale)</td></tr>
+<tr><td>PEPPINO DI CAPRI</td><td>E MO' E MO' (Strumentale)</td></tr>
+<tr><td>Pierangelo Bertoli ft Fiorella Mannoia</td><td>Pescatore</td></tr>
+<tr><td>Pierangelo Bertoli ft Tazenda</td><td>Spunta la luna dal monte</td></tr>
+<tr><td>Pierdavide Carone</td><td>Nanì</td></tr>
+<tr><td>Pinguini Tattici Nucleari</td><td>Amaro</td></tr>
+<tr><td>Pinguini Tattici Nucleari</td><td>Islanda (Strumentale)</td></tr>
+<tr><td>Pinguini Tattici Nucleari</td><td>Ridere (Strumentale)</td></tr>
+<tr><td>Pinguini Tattici Nucleari</td><td>Romantico ma muori (Strumentale)</td></tr>
+<tr><td>Pinguini Tattici Nucleari</td><td>Sorry scusa lo siento</td></tr>
+<tr><td>Pino Daniele</td><td>Amore senza fine</td></tr>
+<tr><td>Pino Daniele</td><td>Basta 'na jurnata 'e sole</td></tr>
+<tr><td>Pino Daniele</td><td>Che Dio ti benedica (Strumentale)</td></tr>
+<tr><td>PINO DANIELE</td><td>IO PER LEI (Strumentale)</td></tr>
+<tr><td>PINO DANIELE</td><td>JE SO PAZZO (Strumentale)</td></tr>
+<tr><td>Pino Daniele</td><td>Je So' Pazzo</td></tr>
+<tr><td>Pino Daniele</td><td>Mal di te (Strumentale)</td></tr>
+<tr><td>Pino Daniele</td><td>Musica Musica</td></tr>
+<tr><td>Pino Daniele</td><td>Napule E'</td></tr>
+<tr><td>Pino Daniele</td><td>Quando</td></tr>
+<tr><td>Pino Daniele</td><td>Sara</td></tr>
+<tr><td>Pino Daniele</td><td>Tempo di cambiare</td></tr>
+<tr><td>Pino Donaggio</td><td>Io che non vivo</td></tr>
+<tr><td>Piotta</td><td>La grande onda (Strumentale)</td></tr>
+<tr><td>Pooh</td><td>Chi fermerà la musica</td></tr>
+<tr><td>Pooh</td><td>Ci penserò domani</td></tr>
+<tr><td>Pooh</td><td>Dimmi Di Si</td></tr>
+<tr><td>Pooh</td><td>La donna del mio amico (-2 semitoni)</td></tr>
+<tr><td>Pooh</td><td>La donna del mio amico</td></tr>
+<tr><td>Pooh</td><td>La mia donna</td></tr>
+<tr><td>Pooh</td><td>Pensiero</td></tr>
+<tr><td>Pooh</td><td>Tanta voglia di lei</td></tr>
+<tr><td>Pooh</td><td>Uomini soli</td></tr>
+<tr><td>Principe e Socio M</td><td>Targato NA</td></tr>
+<tr><td>Pupo</td><td>Firenze Santa Maria Novella</td></tr>
+<tr><td>Pupo</td><td>Firenze Santa Maria Novella (Strumentale)</td></tr>
+<tr><td>Pupo</td><td>Gelato al cioccolato</td></tr>
+<tr><td>Pupo</td><td>Gelato al cioccolato (Strumentale)</td></tr>
+<tr><td>Pupo</td><td>Su di noi</td></tr>
+<tr><td>PUPO</td><td>SU DI NOI LIVE (Strumentale)</td></tr>
+<tr><td>Quartetto Cetra</td><td>Nella Vecchia Fattoria</td></tr>
+<tr><td>Quartetto Cetra</td><td>Un Bacio a Mezzanotte</td></tr>
+<tr><td>Quelli che ben pensano</td><td>Frankie hi-nrg MC ft. Sinigallia</td></tr>
+<tr><td>Raf</td><td>Cosa resterà degli anni '80 (Strumentale)</td></tr>
+<tr><td>Raf</td><td>Cosa Resterà Di Questi Anni 80</td></tr>
+<tr><td>Raf</td><td>Due (Strumentale)</td></tr>
+<tr><td>Raf</td><td>oggi un Dio Non ho</td></tr>
+<tr><td>Raf e Tozzi</td><td>Gente di Mare</td></tr>
+<tr><td>RAFFAELLA CARRA'</td><td>TANTI AUGURI - reload (Strumentale)</td></tr>
+<tr><td>Raffaella Carrà</td><td>A far l'amore comincia tu</td></tr>
+<tr><td>Raffaella Carrà</td><td>Ballo ballo</td></tr>
+<tr><td>Raffaella Carrà</td><td>Che Dolor</td></tr>
+<tr><td>Raffaella Carrà</td><td>E salutala per me</td></tr>
+<tr><td>Raffaella Carrà</td><td>Festa (Strumentale)</td></tr>
+<tr><td>Raffaella Carrà</td><td>Fiesta</td></tr>
+<tr><td>Raffaella Carrà</td><td>Fiesta - Español (Strumentale)</td></tr>
+<tr><td>Raffaella Carrà</td><td>Io non vivo senza te</td></tr>
+<tr><td>Raffaella Carrà</td><td>Luca</td></tr>
+<tr><td>Raffaella Carrà</td><td>Pedro</td></tr>
+<tr><td>Raffaella Carrà</td><td>Pedro (Strumentale)</td></tr>
+<tr><td>Raffaella Carrà</td><td>Rumore</td></tr>
+<tr><td>Raffaella Carrà</td><td>Rumore (Strumentale)</td></tr>
+<tr><td>Raffaella Carrà</td><td>Tanti Auguri</td></tr>
+<tr><td>Raffaella Carrà</td><td>Tuca Tuca - Balli di Gruppo</td></tr>
+<tr><td>Raoul Casadei</td><td>Ciao Mare (Strumentale)</td></tr>
+<tr><td>Ray Gelato</td><td>Carina (Strumentale)</td></tr>
+<tr><td>Renato Carosone</td><td>'O Sarracino</td></tr>
+<tr><td>Renato Carosone</td><td>Mò vene Natale (Strumentale)</td></tr>
+<tr><td>Renato Carosone</td><td>Tu Vuò Fà l'Americano</td></tr>
+<tr><td>Renato Rascel</td><td>Arrivederci Roma</td></tr>
+<tr><td>Renato Zero</td><td>Amico</td></tr>
+<tr><td>Renato Zero</td><td>Baratto</td></tr>
+<tr><td>Renato Zero</td><td>Cercami (Strumentale)</td></tr>
+<tr><td>Renato Zero</td><td>Cercami</td></tr>
+<tr><td>Renato Zero</td><td>I migliori anni della nostra vita</td></tr>
+<tr><td>Renato Zero</td><td>I Migliori anni della nostra vita</td></tr>
+<tr><td>Renato Zero</td><td>Il Carrozzone</td></tr>
+<tr><td>Renato Zero</td><td>Il Cielo</td></tr>
+<tr><td>Renato Zero</td><td>La favola mia</td></tr>
+<tr><td>Renato Zero</td><td>La favola mia (Strumentale)</td></tr>
+<tr><td>Renato Zero</td><td>Madame</td></tr>
+<tr><td>Renato Zero</td><td>Magari</td></tr>
+<tr><td>Renato Zero</td><td>Mentre aspetto che ritorni</td></tr>
+<tr><td>Renato Zero</td><td>Più Su</td></tr>
+<tr><td>Renato Zero</td><td>Spiagge</td></tr>
+<tr><td>Renato Zero</td><td>Triangolo</td></tr>
+<tr><td>Renzo Arbore</td><td>Era de maggio</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Bella senz'anima</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Celeste nostalgia</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Il tempo della cattedrali - Notre dame de Paris</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Margherita</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Margherita (Strumentale)</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Se stiamo insieme</td></tr>
+<tr><td>Riccardo Cocciante</td><td>Sincerità</td></tr>
+<tr><td>Riccardo Del Turco</td><td>Luglio</td></tr>
+<tr><td>Riccardo Fogli</td><td>Storie di tutti i giorni</td></tr>
+<tr><td>RICCHI E POVERI</td><td>CHE SARA' (Strumentale)</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Che Sarà</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Come Vorrei</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Ma non tutta la vita</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Mamma Maria</td></tr>
+<tr><td>Ricchi E Poveri</td><td>Sarà Perché Ti Amo</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Sarà Perché Ti Amo</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Se M'Innamoro</td></tr>
+<tr><td>Ricchi e Poveri</td><td>Voulez Vous Danser</td></tr>
+<tr><td>Richard Sanderson</td><td>Reality (Il tempo delle mele) (Strumentale)</td></tr>
+<tr><td>RIEMPI CASA D'AGRIFOGLIO</td><td>Deck The Halls</td></tr>
+<tr><td>Righeira</td><td>L'estate sta finendo</td></tr>
+<tr><td>Righeira</td><td>No tengo dinero</td></tr>
+<tr><td>RIKI</td><td>Polaroid</td></tr>
+<tr><td>Rino Gaetano</td><td>A mano a mano (Strumentale)</td></tr>
+<tr><td>Rino Gaetano</td><td>E Berta filava</td></tr>
+<tr><td>Rino Gaetano</td><td>Gianna</td></tr>
+<tr><td>Rino Gaetano</td><td>Ma il cielo è sempre più blu</td></tr>
+<tr><td>Rino Gaetano</td><td>Ma il cielo è sempre più blu (Strumentale)</td></tr>
+<tr><td>Rino Gaetano</td><td>Ti ti ti ti</td></tr>
+<tr><td>Rita Pavone</td><td>Cuore</td></tr>
+<tr><td>Rita Pavone</td><td>Viva La Pappa Col Pomodoro</td></tr>
+<tr><td>Robertino</td><td>Un bacio piccolissimo</td></tr>
+<tr><td>Roberto Murolo, Mia Martini</td><td>Cu'mme</td></tr>
+<tr><td>Roberto Vecchioni</td><td>Chiamami ancora amore</td></tr>
+<tr><td>ROBERTO VECCHIONI</td><td>LUCI A SAN SIRO (Strumentale)</td></tr>
+<tr><td>Roberto Vecchioni</td><td>Per Amore Mio (Ultimi Giorni Di Sancho P.) (Strumentale)</td></tr>
+<tr><td>Roberto Vecchioni</td><td>Samarcanda (Strumentale)</td></tr>
+<tr><td>ROBERTO VECCHIONI</td><td>SOGNA RAGAZZO SOGNA (Strumentale)</td></tr>
+<tr><td>ROCCO GRANATA</td><td>MARINA (Strumentale)</td></tr>
+<tr><td>Rocco Hunt &amp; Ana Mena</td><td>A un passo dalla luna (Strumentale)</td></tr>
+<tr><td>Rocco Hunt, Noemi</td><td>Oh Ma (Strumentale)</td></tr>
+<tr><td>Ron</td><td>Non Abbiam Bisogno Di Parole</td></tr>
+<tr><td>Ron &amp; Tosca</td><td>Vorrei Incontrarti fra cent'anni</td></tr>
+<tr><td>SABRINA SALERNO</td><td>BOYS BOYS BOYS (Strumentale)</td></tr>
+<tr><td>Sabrina Salerno &amp; Jo Squillo</td><td>Siamo Donne</td></tr>
+<tr><td>SADE</td><td>SMOOTH OPERATOR</td></tr>
+<tr><td>Sal Da Vinci</td><td>Rossetto e Caffè (Strumentale)</td></tr>
+<tr><td>Sal Da Vinci</td><td>Sarà per sempre sì</td></tr>
+<tr><td>Sal Da Vinci</td><td>Viento</td></tr>
+<tr><td>SAMUELE BERSANI</td><td>FREAK (Strumentale)</td></tr>
+<tr><td>Samuele Bersani</td><td>Spaccacuore</td></tr>
+<tr><td>Samuele Bersani</td><td>Spaccacuore (Strumentale)</td></tr>
+<tr><td>Samurai Jay</td><td>Ossessione</td></tr>
+<tr><td>Sandro Giacobbe</td><td>Gli Occhi Verdi Di Tua Madre</td></tr>
+<tr><td>Sandy Marton</td><td>People from Ibiza</td></tr>
+<tr><td>Sarah Toscano</td><td>Amarcord (Strumentale)</td></tr>
+<tr><td>Sayf</td><td>Buona Domenica</td></tr>
+<tr><td>Sayf</td><td>Tu mi piaci tanto</td></tr>
+<tr><td>Scialpi</td><td>Rockin'N'Rollin' (Strumentale)</td></tr>
+<tr><td>Scorpions</td><td>Still Loving You</td></tr>
+<tr><td>Secondo Casadei</td><td>Romagna Mia</td></tr>
+<tr><td>Serena Autieri</td><td>All'alba sorgerò Frozen</td></tr>
+<tr><td>Serena Brancale</td><td>Anema e Core</td></tr>
+<tr><td>Serena Brancale</td><td>Qui con me</td></tr>
+<tr><td>Sigle Tv</td><td>La Famiglia Addams</td></tr>
+<tr><td>Silvia Salemi</td><td>A casa di Luca</td></tr>
+<tr><td>Simone Cristicchi</td><td>Quando sarai piccola (Strumentale)</td></tr>
+<tr><td>Sottotono</td><td>Dimmi Di Sbagliato Che C'è</td></tr>
+<tr><td>Sottotono</td><td>Solo lei ha quel che voglio ft Danny Losito</td></tr>
+<tr><td>SPAGNA</td><td>EASY LADY (Strumentale)</td></tr>
+<tr><td>Spagna</td><td>Gente come noi (Strumentale)</td></tr>
+<tr><td>Squallor</td><td>Chi cazz' m' 'o fa fa' (Strumentale)</td></tr>
+<tr><td>Squallor</td><td>Cornutone</td></tr>
+<tr><td>Stadio</td><td>Acqua e Sapone</td></tr>
+<tr><td>Stadio</td><td>Allo Stadio (dove si va) (Strumentale)</td></tr>
+<tr><td>Stadio</td><td>Canzoni alla radio</td></tr>
+<tr><td>Stefano Lentini</td><td>Nisciuno (feat. Virginia Bocelli &amp; Carlotta Pinto) Mare fuori</td></tr>
+<tr><td>Sugarfree</td><td>Cleptomania</td></tr>
+<tr><td>Syria</td><td>Sei Tu</td></tr>
+<tr><td>Tananai</td><td>Bella Madonnina</td></tr>
+<tr><td>Tananai</td><td>Booster (Strumentale)</td></tr>
+<tr><td>Tananai</td><td>Ragni (Strumentale)</td></tr>
+<tr><td>Tazenda e Pierangelo Bertoli</td><td>Spunta la luna dal monte (Strumentale)</td></tr>
+<tr><td>Teppisti dei sogni</td><td>Piccolo fiore dove vai (Strumentale)</td></tr>
+<tr><td>Teresa De Sio</td><td>Voglia e Turnà</td></tr>
+<tr><td>The Cranberries</td><td>Zombie</td></tr>
+<tr><td>The Kolors</td><td>Italodisco (Strumentale)</td></tr>
+<tr><td>The Kolors</td><td>KARMA (Strumentale)</td></tr>
+<tr><td>The Kolors</td><td>Pronto come va (Strumentale)</td></tr>
+<tr><td>The Kolors</td><td>Rolling Stones</td></tr>
+<tr><td>The Kolors</td><td>Tu con chi fai l'amore (Strumentale)</td></tr>
+<tr><td>The Kolors</td><td>Un Ragazzo una ragazza</td></tr>
+<tr><td>The Showmen</td><td>Un'ora sola ti vorrei</td></tr>
+<tr><td>The Showmen</td><td>Un'ora sola ti vorrei</td></tr>
+<tr><td>Tina Turner</td><td>What's Love Got to Do with It</td></tr>
+<tr><td>Tiromancino</td><td>Per Me è Importante</td></tr>
+<tr><td>Tiromancino ft. Enula</td><td>Due Rose (Strumentale)</td></tr>
+<tr><td>Tiziana Rivale</td><td>Sarà quel che sarà</td></tr>
+<tr><td>TIZIANO FERRO</td><td>ADDIO MIO AMORE (Strumentale)</td></tr>
+<tr><td>Tiziano Ferro</td><td>Destinazione Mare (Strumentale)</td></tr>
+<tr><td>Tiziano Ferro</td><td>E fuori è buio</td></tr>
+<tr><td>Tiziano Ferro</td><td>Ed ero Contentissimo</td></tr>
+<tr><td>Tiziano Ferro</td><td>Il regalo più grande</td></tr>
+<tr><td>Tiziano Ferro</td><td>Imbranato</td></tr>
+<tr><td>TIZIANO FERRO</td><td>LA PRIMA FESTA DEL PAPA' (Strumentale)</td></tr>
+<tr><td>TIZIANO FERRO</td><td>LA VITA SPLENDIDA (Strumentale)</td></tr>
+<tr><td>Tiziano Ferro</td><td>Non Me Lo So Spiegare</td></tr>
+<tr><td>Tiziano Ferro</td><td>Non me lo so spiegare (Strumentale)</td></tr>
+<tr><td>TIZIANO FERRO</td><td>POTREMMO RITORNARE - 2016</td></tr>
+<tr><td>Tiziano Ferro</td><td>Rosso relativo</td></tr>
+<tr><td>TIZIANO FERRO</td><td>SENZA SCAPPARE MAI PIÙ (Strumentale)</td></tr>
+<tr><td>TIZIANO FERRO</td><td>SERE NERE (Strumentale)</td></tr>
+<tr><td>Tiziano Ferro</td><td>Sere Nere</td></tr>
+<tr><td>TIZIANO FERRO</td><td>TARDES NEGRAS (Strumentale)</td></tr>
+<tr><td>Tiziano Ferro</td><td>Ti Scatterò una foto</td></tr>
+<tr><td>Tommaso Paradiso, Baustelle</td><td>Amore Indiano (Strumentale)</td></tr>
+<tr><td>TONY TAMMARO</td><td>IL ROCK DEI TAMARRI (Strumentale)</td></tr>
+<tr><td>Tony Tammaro</td><td>O' Trerrote (Strumentale)</td></tr>
+<tr><td>TONY TAMMARO</td><td>PATRIZIA (Strumentale)</td></tr>
+<tr><td>Toto Cutugno</td><td>Figli (Strumentale)</td></tr>
+<tr><td>Toto Cutugno</td><td>L'</td></tr>
+<tr><td>Totò</td><td>Malafemmena (Strumentale)</td></tr>
+<tr><td>Tre Allegri Ragazzi Morti</td><td>Occhi Bassi (Strumentale)</td></tr>
+<tr><td>Tredici Pietro</td><td>L'uomo che cade</td></tr>
+<tr><td>Tullio De Piscopo</td><td>Andamento Lento (Strumentale)</td></tr>
+<tr><td>ULTIMO</td><td>ACQUARIO</td></tr>
+<tr><td>Ultimo</td><td>Altrove (Strumentale)</td></tr>
+<tr><td>Ultimo</td><td>Il bambino che contava le stelle</td></tr>
+<tr><td>Ultimo</td><td>Il giorno che aspettavo</td></tr>
+<tr><td>Ultimo</td><td>Occhi lucidi (Strumentale)</td></tr>
+<tr><td>Ultimo</td><td>Tutto questo sei tu (Piano)</td></tr>
+<tr><td>Ultimo – Il ballo delle incertezze</td><td>(Strumentale)</td></tr>
+<tr><td>Umberto Balsamo</td><td>L' Angelo Azzurro</td></tr>
+<tr><td>Umberto Bindi</td><td>Il nostro concerto</td></tr>
+<tr><td>Umberto Tozzi</td><td>Gloria</td></tr>
+<tr><td>Umberto Tozzi</td><td>Io Camminerò</td></tr>
+<tr><td>Umberto Tozzi</td><td>Notte Rosa</td></tr>
+<tr><td>Umberto Tozzi</td><td>Perdendo Anna</td></tr>
+<tr><td>Umberto Tozzi</td><td>Qualcosa Qualcuno</td></tr>
+<tr><td>UMBERTO TOZZI</td><td>STELLA STAI (Strumentale)</td></tr>
+<tr><td>Umberto Tozzi</td><td>Ti Amo</td></tr>
+<tr><td>Umberto Tozzi</td><td>Ti amo (Strumentale)</td></tr>
+<tr><td>Umberto Tozzi</td><td>Tu</td></tr>
+<tr><td>Umberto Tozzi &amp; Raf</td><td>Gente di mare</td></tr>
+<tr><td>Valeria Rossi</td><td>Tre Parole</td></tr>
+<tr><td>VASCO ROSSI</td><td>ALBACHIARA</td></tr>
+<tr><td>Vasco Rossi</td><td>Anima fragile</td></tr>
+<tr><td>VASCO ROSSI</td><td>ASILO REPUBLIC (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Bollicine (Coca Cola) (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>BRAVA (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>C'E' CHI DICE NO (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>C'è chi dice no</td></tr>
+<tr><td>VASCO ROSSI</td><td>CANZONE (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>CIAO (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Colpa D'Alfredo</td></tr>
+<tr><td>Vasco Rossi</td><td>Come Nelle Favole</td></tr>
+<tr><td>VASCO ROSSI</td><td>COME VORREI (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Dimentichiamoci questa città</td></tr>
+<tr><td>Vasco Rossi</td><td>Domenica Lunatica (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Dormi, dormi (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>e</td></tr>
+<tr><td>Vasco Rossi</td><td>EH… GIÀ (io sono ancora qua) (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Gabri (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>GENERALE (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Generale</td></tr>
+<tr><td>Vasco Rossi</td><td>Gli Angeli</td></tr>
+<tr><td>Vasco Rossi</td><td>Gli sbagli che fai (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Gli spari sopra</td></tr>
+<tr><td>VASCO ROSSI</td><td>LA COMPAGNIA (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>La nostra Relazione (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>NON L'HAI MICA CAPITO (TI VOGLIO BENE)</td></tr>
+<tr><td>Vasco Rossi</td><td>Non L'Hai Mica Capito</td></tr>
+<tr><td>Vasco Rossi</td><td>Non mi va</td></tr>
+<tr><td>Vasco Rossi</td><td>Ogni Volta</td></tr>
+<tr><td>Vasco Rossi</td><td>Ogni Volta (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>QUANTI ANNI HAI (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>REWIND (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Sally</td></tr>
+<tr><td>VASCO ROSSI</td><td>SALLY (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Sally (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>SIAMO QUI (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Siamo Solo Noi</td></tr>
+<tr><td>VASCO ROSSI</td><td>SPLENDIDA GIORNATA (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>T'IMMAGINI LIVE (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Ti prendo e ti porto via (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Un senso</td></tr>
+<tr><td>Vasco Rossi</td><td>Una nuova canzone per lei</td></tr>
+<tr><td>VASCO ROSSI</td><td>VA BENE, VA BENE COSì (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Vita Spericolata</td></tr>
+<tr><td>VASCO ROSSI</td><td>VITA SPERICOLATA (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Vivere (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>VIVERE UNA FAVOLA (Strumentale)</td></tr>
+<tr><td>Vasco Rossi</td><td>Vivere una favola</td></tr>
+<tr><td>VASCO ROSSI</td><td>VOGLIO ANDARE AL MARE (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI</td><td>XI COMANDAMENTO (Strumentale)</td></tr>
+<tr><td>VASCO ROSSI E MARRACASH</td><td>LA PIOGGIA ALLA DOMENICA (Strumentale)</td></tr>
+<tr><td>VELVET</td><td>BOY BAND (SOFFRO LO STRESS) (Strumentale)</td></tr>
+<tr><td>Viola Valentino</td><td>Comprami</td></tr>
+<tr><td>Wham!</td><td>Last Christmas</td></tr>
+<tr><td>Zecchino d'oro</td><td>Il coccodrillo come fa</td></tr>
+<tr><td>Zero Assoluto</td><td>Per dimenticare (Strumentale)</td></tr>
+<tr><td>Zucchero</td><td>Baila (Sexy Thing)</td></tr>
+<tr><td>ZUCCHERO</td><td>BAILA (SEXY THING)</td></tr>
+<tr><td>Zucchero</td><td>Come Il Sole All'improvviso</td></tr>
+<tr><td>Zucchero</td><td>Con le Mani (Strumentale)</td></tr>
+<tr><td>Zucchero</td><td>Così Celeste</td></tr>
+<tr><td>Zucchero</td><td>Diamante</td></tr>
+<tr><td>Zucchero</td><td>Diamante</td></tr>
+<tr><td>Zucchero</td><td>Diavolo in me</td></tr>
+<tr><td>ZUCCHERO</td><td>DIAVOLO IN ME (Strumentale)</td></tr>
+<tr><td>ZUCCHERO</td><td>DONNE (Strumentale)</td></tr>
+<tr><td>Zucchero</td><td>Donne</td></tr>
+<tr><td>ZUCCHERO</td><td>HEY MAN (Strumentale)</td></tr>
+<tr><td>Zucchero</td><td>Il mare impetuoso al tramonto (Strumentale)</td></tr>
+<tr><td>Zucchero</td><td>Occhi</td></tr>
+<tr><td>Zucchero</td><td>Overdose d'amore</td></tr>
+<tr><td>ZUCCHERO</td><td>PIPPO (Strumentale)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+<!-- Pulsante Torna Su -->
+<button id="btnTornaSu" title="Torna su" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; border: none; outline: none; background-color: #333; color: white; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; width: 50px; height: 50px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3);">⬆</button>
+
+<script>
+// Prende il pulsante
+const mioBottone = document.getElementById("btnTornaSu");
+
+// Quando l'utente scende di 300px dall'inizio del documento, mostra il bottone
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        mioBottone.style.display = "block";
+    } else {
+        mioBottone.style.display = "none";
+    }
+};
+
+// Quando l'utente clicca sul bottone, torna in alto con un effetto fluido
+mioBottone.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Questo rende il movimento morbido
+    });
+});
+</script>
+
+
+<script>
+const input = document.getElementById('search');
+const rows = Array.from(document.querySelectorAll('#songs tbody tr'));
+const count = document.getElementById('count');
+
+function update() {
+  const q = input.value.trim().toLocaleLowerCase('it-IT');
+  let visible = 0;
+  rows.forEach(row => {
+    const match = !q || row.textContent.toLocaleLowerCase('it-IT').includes(q);
+    row.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  count.textContent = visible + (visible === 1 ? ' brano' : ' brani');
+}
+input.addEventListener('input', update);
+
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 500);
+}, {passive:true});
+
+backTop.addEventListener('click', () => {
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>

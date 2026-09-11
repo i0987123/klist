@@ -1,0 +1,1324 @@
+<style>
+  :root {
+    --text:#171717;
+    --muted:#6d6d6d;
+    --line:#dedede;
+    --stripe:#f3f3f3;
+    --bg:#fff;
+    --accent:#e62b20;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap {
+    width:min(100% - 32px, 1080px);
+    margin:0 auto;
+    padding:38px 0 56px;
+  }
+  .brand {
+    margin-bottom:42px;
+    line-height:.92;
+  }
+  .brand strong {
+    display:block;
+    font-size:27px;
+    letter-spacing:-1.4px;
+  }
+  .brand span {
+    display:block;
+    color:var(--accent);
+    font-size:25px;
+    font-weight:700;
+    letter-spacing:-1.2px;
+  }
+  h1 {
+    margin:0 0 34px;
+    font-size:clamp(44px, 8vw, 84px);
+    line-height:.95;
+    letter-spacing:-4px;
+    font-weight:800;
+  }
+  .tools {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    margin:0 0 14px;
+    position:sticky;
+    top:0;
+    z-index:20;
+    padding:10px 0;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(8px);
+  }
+#search {
+    width: 82%;
+    border: 3px solid #ff833d;
+    border-radius: 10px;
+    padding: 13px 15px;
+    font: inherit;
+    font-size: 16px;
+    outline: none;
+    background: #feffdc6b;
+}
+  #search:focus {
+    border-color:#999;
+    box-shadow:0 0 0 3px #eee;
+  }
+  #count {
+    flex:0 0 auto;
+    white-space:nowrap;
+    color:var(--muted);
+    font-size:14px;
+  }
+  .table-wrap {
+    overflow-x:auto;
+    border-radius:10px;
+    border:1px solid var(--line);
+  }
+  table {
+    width:100%;
+    border-collapse:collapse;
+    table-layout:fixed;
+    font-size:16px;
+  }
+  th, td {
+    text-align:left;
+    padding:9px 14px;
+    vertical-align:middle;
+    border-bottom:1px solid var(--line);
+  }
+  th {
+    background:#fff;
+    font-size:15px;
+    font-weight:800;
+    padding-top:12px;
+    padding-bottom:12px;
+  }
+  th:first-child, td:first-child {
+    width:31%;
+  }
+  th:last-child, td:last-child {
+    width:69%;
+  }
+  tbody tr:nth-child(odd) td {
+    background:var(--stripe);
+  }
+  tbody tr:last-child td {
+    border-bottom:0;
+  }
+  td {
+    line-height:1.25;
+    overflow-wrap:anywhere;
+  }
+  #backTop {
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:44px;
+    height:44px;
+    border:0;
+    border-radius:50%;
+    background:#171717;
+    color:#fff;
+    font-size:22px;
+    line-height:1;
+    cursor:pointer;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 3px 12px rgba(0,0,0,.18);
+    z-index:30;
+  }
+  #backTop.show {
+    display:flex;
+  }
+  #backTop:hover {
+    transform:translateY(-2px);
+  }
+
+  @media (max-width:600px) {
+    .wrap {
+      width:min(100% - 20px, 1080px);
+      padding:24px 0 36px;
+    }
+    .brand {
+      margin-bottom:30px;
+    }
+    .brand strong { font-size:22px; }
+    .brand span { font-size:21px; }
+    h1 {
+      font-size:42px;
+      letter-spacing:-2.4px;
+      margin-bottom:24px;
+    }
+    .tools {
+      display:block;
+      margin-bottom:10px;
+      padding:8px 0 9px;
+    }
+    #count {
+      display:block;
+      margin:7px 2px 0;
+    }
+    table {
+      font-size:15px;
+    }
+    th, td {
+      padding:8px 10px;
+    }
+    th {
+      font-size:14px;
+    }
+    th:first-child, td:first-child {
+      width:34%;
+    }
+    th:last-child, td:last-child {
+      width:66%;
+    }
+  }
+</style>
+
+
+<main class="wrap">
+  <h1>K — Internazionali</h1>
+
+  <div class="tools">
+    <input id="search" type="search" placeholder="Cerca artista o brano…" aria-label="Cerca artista o brano">
+    <span id="count">1065 brani</span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="songs">
+      <thead>
+        <tr><th>Artista</th><th>Brano</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>The Carpenters</td><td>(They Long to Be) Close to You</td></tr>
+<tr><td>Don't Forget Me</td><td>Captain And Tenille (instrumental w lyrics) (Instrumental with Lyrics)</td></tr>
+<tr><td>MINUTES BEFORE TAKE OFF</td><td>Dan Henry</td></tr>
+<tr><td>Bruno Mars</td><td>24K Magic</td></tr>
+<tr><td>Non Blondes</td><td>What's Up</td></tr>
+<tr><td></td><td>90s Classics For All Singers</td></tr>
+<tr><td>Johnny Mathis</td><td>A Certain Smile</td></tr>
+<tr><td>The Beatles</td><td>A Day in the Life</td></tr>
+<tr><td>A Flock Of Seagulls</td><td>I Ran (So Far Away)</td></tr>
+<tr><td>America</td><td>A Horse With No Name</td></tr>
+<tr><td>Queen (Highlander)</td><td>A Kind of Magic</td></tr>
+<tr><td>Engelbert Humperdinck</td><td>A Man Without Love</td></tr>
+<tr><td>A Thousand Years</td><td>Christina Perri</td></tr>
+<tr><td>A Whole New World</td><td>Aladdin</td></tr>
+<tr><td>a-ha</td><td>Take On Me</td></tr>
+<tr><td>A1</td><td>Like A Rose</td></tr>
+<tr><td>Aaliyah</td><td>One In A Million</td></tr>
+<tr><td>ABBA</td><td>Lay All Your Love On Me</td></tr>
+<tr><td>ABBA</td><td>Slipping Through My Fingers</td></tr>
+<tr><td>ABBA</td><td>Slipping Through My Fingers (Piano)</td></tr>
+<tr><td>ACDC</td><td>TNT</td></tr>
+<tr><td>Ace of Base</td><td>All That She Wants</td></tr>
+<tr><td>Ace of Base</td><td>The Sign</td></tr>
+<tr><td>The Beatles (Acoustic)</td><td>Across The Universe</td></tr>
+<tr><td>ACDC</td><td>Highway to Hell</td></tr>
+<tr><td>Aerosmith</td><td>I Don't Want To Miss A Thing</td></tr>
+<tr><td>Toto</td><td>Africa</td></tr>
+<tr><td></td><td>Ain't No Mountain High Enough</td></tr>
+<tr><td>Air Supply</td><td>All Out Of Love</td></tr>
+<tr><td>Air Supply</td><td>Having You Near Me</td></tr>
+<tr><td>Air Supply</td><td>Here I Am</td></tr>
+<tr><td>Air Supply</td><td>Making Love Out of Nothing at All</td></tr>
+<tr><td>Alanis Morisette</td><td>Hand In My Pocket</td></tr>
+<tr><td>Alanis Morisette</td><td>You Oughta Know</td></tr>
+<tr><td>Alanis Morissette</td><td>Ironic</td></tr>
+<tr><td>Alannah Myles</td><td>Black Velvet</td></tr>
+<tr><td>Alice Cooper</td><td>Poison</td></tr>
+<tr><td>Alicia Keys</td><td>If I Ain't Got You</td></tr>
+<tr><td>Alicia Keys</td><td>No One</td></tr>
+<tr><td></td><td>all i wanna do is make love to you</td></tr>
+<tr><td>America</td><td>ALL MY LIFE</td></tr>
+<tr><td>Air Supply</td><td>All Out Of Love</td></tr>
+<tr><td>All Saints</td><td>Never Ever</td></tr>
+<tr><td>Elvis Presley</td><td>All Shook Up</td></tr>
+<tr><td>Dr. Hook</td><td>All The Time In The World</td></tr>
+<tr><td>Allona</td><td>Someone's Always Saying Goodbye</td></tr>
+<tr><td>Ariana Grande &amp; Nathan Sykes</td><td>Almost Is Never Enough</td></tr>
+<tr><td>Alone Again (Naturally)</td><td>Gilbert O'Sullivan</td></tr>
+<tr><td>Elvis Presley</td><td>Always on My Mind</td></tr>
+<tr><td>America</td><td>Only in Your Heart</td></tr>
+<tr><td>America</td><td>Sister Golden Hair</td></tr>
+<tr><td>America</td><td>Ventura Highway</td></tr>
+<tr><td>Amy Winehouse</td><td>Back To Black</td></tr>
+<tr><td>Amy Winehouse</td><td>Back To Black (Piano)</td></tr>
+<tr><td>Amy Winehouse</td><td>Love Is A Losing Game</td></tr>
+<tr><td>Amy Winehouse</td><td>Rehab</td></tr>
+<tr><td>Amy Winehouse</td><td>Tears Dry On Their Own</td></tr>
+<tr><td>Amy Winehouse</td><td>Valerie</td></tr>
+<tr><td>Angela Bofill</td><td>Break It To Me Gently</td></tr>
+<tr><td>Anne Murray</td><td>Just Another Woman In Love</td></tr>
+<tr><td></td><td>Another Brick In The Wall (Part II) : Pink Floyd | with Lyrics</td></tr>
+<tr><td>Pat Boone</td><td>April Love</td></tr>
+<tr><td>Aretha Franklin</td><td>(You Make Me Feel Like) A Natural Woman</td></tr>
+<tr><td>Aretha Franklin</td><td>A Natural Woman</td></tr>
+<tr><td>Aretha Franklin</td><td>I Say A Little Prayer (Instrumental)</td></tr>
+<tr><td>Aretha Franklin</td><td>Respect</td></tr>
+<tr><td>Ariana Grande &amp; Nathan Sykes</td><td>Almost Is Never Enough</td></tr>
+<tr><td>Ariana Grande</td><td>7 Rings</td></tr>
+<tr><td>Ariana Grande</td><td>Side To Side</td></tr>
+<tr><td>Ariana Grande</td><td>thank u, next</td></tr>
+<tr><td>Ashanti</td><td>Foolish</td></tr>
+<tr><td>Bread</td><td>Aubrey</td></tr>
+<tr><td>B.J. Thomas</td><td>Raindrops Keep Fallin' On My Head</td></tr>
+<tr><td>Baby I'm</td><td>A Want You - - Bread</td></tr>
+<tr><td>Backstreet Boys</td><td>All I Have To Give</td></tr>
+<tr><td>Backstreet Boys</td><td>As Long As You Love Me</td></tr>
+<tr><td>Backstreet Boys</td><td>Everybody (Backstreet's Back)</td></tr>
+<tr><td>Backstreet Boys</td><td>I Want It That Way</td></tr>
+<tr><td>Backstreet Boys</td><td>I Want It That Way (Piano)</td></tr>
+<tr><td>Backstreet Boys</td><td>Show Me The Meaning Of Being Lonely</td></tr>
+<tr><td>Bad Case Of Loving You (Doctor, Doctor)</td><td>Robert Palmer</td></tr>
+<tr><td></td><td>Bad Habit | Steve Lacy</td></tr>
+<tr><td>Lady Gaga</td><td>Bad Romance</td></tr>
+<tr><td></td><td>Bad To The Bone</td></tr>
+<tr><td>Badfinger</td><td>Day After Day</td></tr>
+<tr><td>Barbra Streisand, Ce´line Dion</td><td>Tell Him</td></tr>
+<tr><td>Barbra Streisand, Judy Garland</td><td>Get HappyHappy Days Are Here Again</td></tr>
+<tr><td>Barenaked Ladies</td><td>One Week</td></tr>
+<tr><td>Heart (band)</td><td>Barracuda</td></tr>
+<tr><td>Barry Manilow</td><td>I Write The Songs</td></tr>
+<tr><td>Barry Manilow</td><td>This One's For You</td></tr>
+<tr><td></td><td>BARRY MANILOW MEDLEY</td></tr>
+<tr><td>Barry White</td><td>You're The First, The Last, My Everything</td></tr>
+<tr><td>The Rolling Stones</td><td>Beast of Burden</td></tr>
+<tr><td>Michael Jackson</td><td>Beat It</td></tr>
+<tr><td>Beatles, The</td><td>While My Guitar Gently Weeps ( &amp; Lyrics)</td></tr>
+<tr><td>BEE GEES</td><td>To Love Somebody</td></tr>
+<tr><td></td><td>Bee Gees – First Of May (-1 key) (Instrumental)</td></tr>
+<tr><td>Belinda Carlisle</td><td>Heaven Is A Place On Earth</td></tr>
+<tr><td>Michael Jackson</td><td>Ben</td></tr>
+<tr><td>Berlin</td><td>Take My Breath Away</td></tr>
+<tr><td>The Stylistics</td><td>Betcha by Golly, Wow</td></tr>
+<tr><td>Beverley Craven</td><td>Promise Me</td></tr>
+<tr><td>Beyoncé</td><td>Best Thing I Never Had</td></tr>
+<tr><td>Beyoncé</td><td>Broken-Hearted Girl</td></tr>
+<tr><td>Beyoncé</td><td>Irreplaceable</td></tr>
+<tr><td>Beyoncé</td><td>Listen</td></tr>
+<tr><td>Beyoncé</td><td>Love On Top Lyrics</td></tr>
+<tr><td>Bic Runga</td><td>Sway</td></tr>
+<tr><td>Bill Withers</td><td>Ain't No Sunshine</td></tr>
+<tr><td>Bill Withers</td><td>Lean On Me</td></tr>
+<tr><td>Michael Jackson</td><td>Billie Jean</td></tr>
+<tr><td>Billy Joel</td><td>Uptown Girl</td></tr>
+<tr><td>Billy Ocean</td><td>Suddenly</td></tr>
+<tr><td>Bing Rodrigo</td><td>May Pag-ibig Pa Ba</td></tr>
+<tr><td>DON MCLEAN</td><td>BIRTAY SONG</td></tr>
+<tr><td>Deep Purple</td><td>Black Night</td></tr>
+<tr><td>Blackstreet, Dr Dre, Queen Pen</td><td>No Diggity</td></tr>
+<tr><td>The Weeknd</td><td>Blinding Lights</td></tr>
+<tr><td>blink-182</td><td>All the Small Things</td></tr>
+<tr><td>Blondie</td><td>Call Me () (Instrumental)</td></tr>
+<tr><td>Blowin' in the Wind</td><td>Peter, Paul and Mary</td></tr>
+<tr><td>Bob Marley &amp; The Wailers</td><td>Jamming</td></tr>
+<tr><td>Bob Marley</td><td>Buffalo Soldier</td></tr>
+<tr><td>Bob Marley</td><td>Get Up, Stand Up</td></tr>
+<tr><td>Bob Marley</td><td>I Shot The Sheriff</td></tr>
+<tr><td>Bob Marley</td><td>Is This Love</td></tr>
+<tr><td>Bob Marley</td><td>Jamming</td></tr>
+<tr><td>Bob Marley</td><td>No Woman, No Cry (Live Version)</td></tr>
+<tr><td>Bob Marley</td><td>No Woman, No Cry The Legend Remixes</td></tr>
+<tr><td>Bob Marley</td><td>One LovePeople Get Ready</td></tr>
+<tr><td>Bob Marley</td><td>Redemption Song</td></tr>
+<tr><td>Bob Marley</td><td>Stir It Up</td></tr>
+<tr><td>Bob Marley</td><td>Three Little Birds</td></tr>
+<tr><td>Bob Marley</td><td>Waiting In Vain</td></tr>
+<tr><td>Bobby Caldwell</td><td>What You Won't Do For Love</td></tr>
+<tr><td>Queen</td><td>Bohemian Rhapsody</td></tr>
+<tr><td>Bon Jovi</td><td>Always</td></tr>
+<tr><td>Bon Jovi</td><td>Bed Of Roses</td></tr>
+<tr><td></td><td>Bon Jovi -Livin' On A Prayer</td></tr>
+<tr><td>Boney M.</td><td>Feliz Navidad</td></tr>
+<tr><td>Bonnie Raitt</td><td>I Can't Make You Love Me</td></tr>
+<tr><td>Bonnie Tyler</td><td>Total Eclipse Of The Heart</td></tr>
+<tr><td>Boston</td><td>More Than A Feeling</td></tr>
+<tr><td>Boyz II Men</td><td>End Of The Road</td></tr>
+<tr><td>Boyz II Men</td><td>I'll Make Love To You</td></tr>
+<tr><td>Boyz II Men</td><td>On Bended Knee</td></tr>
+<tr><td>Boyzone</td><td>Baby Can I Hold You</td></tr>
+<tr><td>Brandy, Monica</td><td>The Boy Is Mine</td></tr>
+<tr><td>The Corrs</td><td>Breathless</td></tr>
+<tr><td>Brian McKnight</td><td>Back At One</td></tr>
+<tr><td>Brian McKnight</td><td>One Last Cry</td></tr>
+<tr><td>Simon &amp; Garfunkel</td><td>BRIDGE OVER TROUBLED WATER</td></tr>
+<tr><td>BRIDGES</td><td>SERGIO MENDES</td></tr>
+<tr><td>Britney Spears</td><td>...Baby One More Time</td></tr>
+<tr><td>Anne Murray</td><td>BROKEN HEARTED ME</td></tr>
+<tr><td></td><td>Broken Hearted Me</td></tr>
+<tr><td>Brooks &amp; Dunn</td><td>Neon Moon</td></tr>
+<tr><td>Bruce Springsteen</td><td>Dancing In The Dark</td></tr>
+<tr><td>Bruce Springsteen</td><td>I'm On Fire</td></tr>
+<tr><td>Bruno Mars</td><td>That's What I Like</td></tr>
+<tr><td>Bruno Mars</td><td>When I Was Your Man</td></tr>
+<tr><td>Bucks Fizz</td><td>Making Your Mind Up</td></tr>
+<tr><td>Burt Bacharach</td><td>I'll Never Fall In Love Again with Lyrics</td></tr>
+<tr><td>Hollies</td><td>Bus Stop</td></tr>
+<tr><td>Busta Rhymes, Mariah Carey</td><td>I Know What You Want</td></tr>
+<tr><td>BUT IF YOU LEAVE ME</td><td>Junior</td></tr>
+<tr><td>Everly Brothers</td><td>Bye Bye Love</td></tr>
+<tr><td>The Everly Brothers</td><td>Bye Bye Love</td></tr>
+<tr><td>Rihanna</td><td>California King Bed</td></tr>
+<tr><td>Blondie</td><td>Call Me</td></tr>
+<tr><td>Call Me Maybe</td><td>Carly Rae Jepsen</td></tr>
+<tr><td></td><td>cameo word up lyrics</td></tr>
+<tr><td></td><td>Can We Still Be Friends | Todd Rundgren</td></tr>
+<tr><td>Matthew Fisher</td><td>Can't Stop Loving You Now</td></tr>
+<tr><td>Frankie Valli &amp; The Four Seasons</td><td>Can't Take My Eyes Off You</td></tr>
+<tr><td>Cardi B, Kehlani</td><td>Safe (feat. Kehlani)</td></tr>
+<tr><td>George Michael (Wham!)</td><td>Careless Whisper</td></tr>
+<tr><td>Cartoons</td><td>Witch Doctor (Ooh Eeh Ooh Ah Aah Ting Tang Walla Walla Bing Bang)</td></tr>
+<tr><td>Cassie</td><td>Long Way 2 Go</td></tr>
+<tr><td>CCR</td><td>Have you ever seen the rain</td></tr>
+<tr><td></td><td>CCR-Bad moon rising, no vocals</td></tr>
+<tr><td>CeeLo Green</td><td>Forget You</td></tr>
+<tr><td>Kool and the Gang</td><td>Celebration</td></tr>
+<tr><td>Celine Dion</td><td>My Heart Will Go On</td></tr>
+<tr><td>Ce´line Dion</td><td>Because You Loved Me</td></tr>
+<tr><td>Ce´line Dion</td><td>It's All Coming Back To Me Now</td></tr>
+<tr><td>Ce´line Dion</td><td>My Heart Will Go On (Piano)</td></tr>
+<tr><td>Ce´line Dion</td><td>The Power of Love</td></tr>
+<tr><td>Chaka Khan</td><td>Through The Fire</td></tr>
+<tr><td>JOHNNY MATHIS</td><td>CHANCES ARE</td></tr>
+<tr><td>Charlene</td><td>I've Never Been To Me</td></tr>
+<tr><td>Cheap Trick</td><td>The Flame</td></tr>
+<tr><td>Cher</td><td>If I Could Turn Back Time</td></tr>
+<tr><td>Chicago</td><td>25 Or 6 To 4</td></tr>
+<tr><td>Chicago</td><td>Beginnings</td></tr>
+<tr><td>Chicago</td><td>Colour My World</td></tr>
+<tr><td>Chicago</td><td>If You Leave Me Now</td></tr>
+<tr><td>Chicago</td><td>Make Me Smile (original)</td></tr>
+<tr><td>Chicago</td><td>Make Me Smile (Instrumental with Lyrics)</td></tr>
+<tr><td>Chicago</td><td>Saturday In The Park</td></tr>
+<tr><td>ABBA</td><td>Chiquitita</td></tr>
+<tr><td>Chita~ozinho &amp; Xororo´</td><td>Evide^ncias</td></tr>
+<tr><td>Chris De Burgh</td><td>The Lady In Red</td></tr>
+<tr><td>Chris Isaak</td><td>Wicked Game</td></tr>
+<tr><td>Chris Norman</td><td>No Arms Can Ever Hold You</td></tr>
+<tr><td>Chris Norman</td><td>Some Hearts Are Diamonds</td></tr>
+<tr><td>Chris Walker</td><td>How Do You Heal A Broken Heart</td></tr>
+<tr><td>Christina Aguilera</td><td>Genie In A Bottle</td></tr>
+<tr><td>Christina Aguilera</td><td>What A Girl Wants</td></tr>
+<tr><td>City Of Angels</td><td>(The Miracles)</td></tr>
+<tr><td>Clapton, Eric</td><td>I Shot The Sheriff ( &amp; Lyrics)</td></tr>
+<tr><td>The Carpenters</td><td>CLOSE TO YOU</td></tr>
+<tr><td>David Gates</td><td>CLOUDS</td></tr>
+<tr><td>Eric Clapton</td><td>Cocaine</td></tr>
+<tr><td>Coco Jones</td><td>ICU</td></tr>
+<tr><td>Cold Heart (PNAU remix)</td><td>Dua Lipa &amp; Elton John</td></tr>
+<tr><td>Colgando en tus manos (duo)</td><td>Carlos Baute &amp; Marta Sánchez</td></tr>
+<tr><td>Colors of the Wind</td><td>Pocahontas</td></tr>
+<tr><td>The Beatles</td><td>Come Together</td></tr>
+<tr><td>Air Supply</td><td>COME WHAT MAY</td></tr>
+<tr><td>Gloria Estefan</td><td>Con Los Años Que Me Quedan</td></tr>
+<tr><td>Constantly</td><td>Video (Star)</td></tr>
+<tr><td>Little River Band</td><td>Cool Change</td></tr>
+<tr><td>Corrine Bailey Rae</td><td>Put Your Records On</td></tr>
+<tr><td>Barry Manilow</td><td>Could It Be Magic</td></tr>
+<tr><td>Creedence Clearwater Revival</td><td>Have You Ever Seen The Rain</td></tr>
+<tr><td>Creedence Clearwater Revival</td><td>Proud Mary</td></tr>
+<tr><td>Crimson and Clover</td><td>Tommy James and The Shondells</td></tr>
+<tr><td></td><td>Crimson And Clover</td></tr>
+<tr><td>Croce, Jim</td><td>Operator (That's Not The Way It Feels) ( &amp; Lyrics)</td></tr>
+<tr><td>CROSBY STILLS AND NASH</td><td>WASTED ON THE WAY</td></tr>
+<tr><td>Crowded House</td><td>Don't Dream It's Over</td></tr>
+<tr><td>Crystal Gayle</td><td>A Long and Lasting Love</td></tr>
+<tr><td>Living Colour</td><td>Cult Of Personality</td></tr>
+<tr><td>Cyndi Lauper</td><td>Girls Just Want To Have Fun</td></tr>
+<tr><td>Cyndi Lauper</td><td>Time After Time</td></tr>
+<tr><td>Cyndi Lauper</td><td>True Colors</td></tr>
+<tr><td>Céline Dion</td><td>All By Myself</td></tr>
+<tr><td>Rod Stewart</td><td>Da Ya Think I'm Sexy</td></tr>
+<tr><td>Dan Byrd</td><td>Boulevard</td></tr>
+<tr><td>Dan Hill</td><td>Never Thought That I Could Love</td></tr>
+<tr><td>Luther Vandross</td><td>Dance with My Father</td></tr>
+<tr><td>Elton John</td><td>Daniel</td></tr>
+<tr><td>Daniel Caesar &amp; H.E.R</td><td>Best Part</td></tr>
+<tr><td>Daniel Caesar &amp; Kali Uchis</td><td>Get You</td></tr>
+<tr><td>David Allan Coe</td><td>The Ride</td></tr>
+<tr><td>David Bowie</td><td>Let's Dance</td></tr>
+<tr><td>David Gates</td><td>Take Me Now</td></tr>
+<tr><td>David Pomeranz</td><td>Born For You</td></tr>
+<tr><td>Dead Or Alive</td><td>You Spin Me Round (Like a Record)</td></tr>
+<tr><td>Debbie Gibson</td><td>Lost In Your Eyes</td></tr>
+<tr><td>Deborah Cox</td><td>Nobody's Supposed to Be Here</td></tr>
+<tr><td>Deep Blue Something</td><td>Breakfast At Tiffany's</td></tr>
+<tr><td>Depeche Mode</td><td>Just Can't Get Enough</td></tr>
+<tr><td>Depeche Mode</td><td>Personal Jesus</td></tr>
+<tr><td>Despacito</td><td>Luis Fonsi &amp; Daddy Yankee</td></tr>
+<tr><td>Destiny's Child</td><td>Say My Name</td></tr>
+<tr><td>Rihanna</td><td>Diamonds</td></tr>
+<tr><td>Paul Anka</td><td>Diana</td></tr>
+<tr><td>Diana Ross</td><td>I'm Coming Out</td></tr>
+<tr><td>Diana Ross</td><td>The Boss (1979)</td></tr>
+<tr><td>Diana Ross</td><td>Theme From Mahogany (Do You Know Where You're Going To)</td></tr>
+<tr><td>Bread</td><td>Diary</td></tr>
+<tr><td>Dido</td><td>Thank You</td></tr>
+<tr><td>SIENNA SPIRO</td><td>Die On This Hill</td></tr>
+<tr><td>Dionne Warwick</td><td>I'll Never Love This Way Again</td></tr>
+<tr><td>Dionne Warwick</td><td>Never Fall In Love Again</td></tr>
+<tr><td>Dionne Warwick</td><td>Walk On By</td></tr>
+<tr><td>DJ Jazzy Jeff &amp; The Fresh Prince</td><td>The Fresh Prince Of Bel-Air</td></tr>
+<tr><td>Diana Ross</td><td>Do You Know Where You're Going To</td></tr>
+<tr><td>Do You Miss Me</td><td>Morris Albert</td></tr>
+<tr><td>Do You Want to Build a Snowman</td><td>Frozen (2013 film)</td></tr>
+<tr><td></td><td>Don McLean Winterwood (See below for URL of post with improved audio).</td></tr>
+<tr><td>Don McLean</td><td>American Pie</td></tr>
+<tr><td>Don McLean</td><td>Crying</td></tr>
+<tr><td>Guns N' Roses</td><td>Don't Cry</td></tr>
+<tr><td></td><td>Don't Know What To Say</td></tr>
+<tr><td>James Taylor</td><td>Don't Let Me Be Lonely Tonight</td></tr>
+<tr><td>THE NOLANS</td><td>DON'T LET ME BE THE LAST TO KNOW</td></tr>
+<tr><td></td><td>Don't Stop It 'Til You Get Enough by Michael Jackson ( : Lower Key)</td></tr>
+<tr><td>ABBA</td><td>Don’t Shut Me Down</td></tr>
+<tr><td></td><td>Doors Light My Fire</td></tr>
+<tr><td>Doors</td><td>Alabama Song</td></tr>
+<tr><td>Doors</td><td>People Are Strange</td></tr>
+<tr><td>Doors</td><td>Riders On The Storm</td></tr>
+<tr><td>Dr. Hook</td><td>Sharing The Night Together</td></tr>
+<tr><td>Duffy</td><td>Mercy</td></tr>
+<tr><td>Duran Duran</td><td>Hungry Like The Wolf</td></tr>
+<tr><td>Kansas</td><td>Dust In The Wind</td></tr>
+<tr><td>Kansas</td><td>Dust in the Wind</td></tr>
+<tr><td>Eagle-Eye Cherry</td><td>Save Tonight</td></tr>
+<tr><td>Eagles</td><td>Hotel California</td></tr>
+<tr><td>Earth, Wind &amp; Fire</td><td>After The Love Has Gone</td></tr>
+<tr><td>East 17</td><td>Stay Another Day</td></tr>
+<tr><td>Edwin McCain</td><td>I'll Be</td></tr>
+<tr><td>Eiffel 65</td><td>Blue Da Ba Dee</td></tr>
+<tr><td>The Beatles</td><td>Eight Days a Week</td></tr>
+<tr><td>Elmiene</td><td>Comets + Gold</td></tr>
+<tr><td>Elvis Presley</td><td>I Just Can't Help Believing</td></tr>
+<tr><td>Elvis Presley</td><td>In The Ghetto</td></tr>
+<tr><td>Elvis Presley</td><td>The Wonder Of You</td></tr>
+<tr><td>England Dan &amp; John Ford Coley</td><td>Nights Are Forever Without You</td></tr>
+<tr><td>Erasure</td><td>A Little Respect</td></tr>
+<tr><td>Eric Carmen</td><td>Hungry Eyes</td></tr>
+<tr><td>Eric Clapton &amp; Steve Winwood</td><td>Double Trouble ( Live from Madison Square Garden )</td></tr>
+<tr><td>Eric Clapton</td><td>Tears In Heaven</td></tr>
+<tr><td>Eric Clapton</td><td>Wonderful Tonight</td></tr>
+<tr><td>The Bangles</td><td>Eternal Flame</td></tr>
+<tr><td>Etta James</td><td>At Last</td></tr>
+<tr><td>Etta James</td><td>I'd Rather Go Blind</td></tr>
+<tr><td>Europe</td><td>Carrie</td></tr>
+<tr><td>Eurythmics</td><td>Sweet Dreams (Are Made of This)</td></tr>
+<tr><td>Eva Cassidy</td><td>Fields Of Gold</td></tr>
+<tr><td>Barry Manilow</td><td>Even Now</td></tr>
+<tr><td>Air Supply</td><td>Even The Nights Are Better</td></tr>
+<tr><td>The Police</td><td>Every Breath You Take</td></tr>
+<tr><td></td><td>Everyday (</td></tr>
+<tr><td>Bread</td><td>EVERYTHING I OWN</td></tr>
+<tr><td>Extreme</td><td>More Than Words</td></tr>
+<tr><td>Survivor</td><td>Eye of the Tiger</td></tr>
+<tr><td>Cat Stevens</td><td>Father and Son</td></tr>
+<tr><td>Father and Son</td><td>| Cat Stevens</td></tr>
+<tr><td>Bad Company</td><td>Feel Like Makin' Love</td></tr>
+<tr><td>James Taylor</td><td>Fire and Rain</td></tr>
+<tr><td>Firehouse</td><td>Love of a Lifetime</td></tr>
+<tr><td>Bee Gees</td><td>First of May</td></tr>
+<tr><td>Fleetwood Mac</td><td>Everywhere</td></tr>
+<tr><td>Fleetwood Mac</td><td>Gypsy</td></tr>
+<tr><td>Foo Fighters</td><td>Everlong</td></tr>
+<tr><td></td><td>Fools Fall In Love</td></tr>
+<tr><td>The Carpenters</td><td>For All We Know</td></tr>
+<tr><td>Foreigner</td><td>I Want To Know What Love Is</td></tr>
+<tr><td>Rex Smith</td><td>Forever</td></tr>
+<tr><td>Four Strong Winds</td><td>Neil Young</td></tr>
+<tr><td>Four Tops</td><td>I Can't Help Myself (Sugar Pie, Honey Bunch)</td></tr>
+<tr><td>Frank Sinatra</td><td>My Way</td></tr>
+<tr><td>Freddie Aguilar</td><td>Minamahal Kita</td></tr>
+<tr><td>Fugees</td><td>Killing Me Softly With His Song (Piano)</td></tr>
+<tr><td>Funkytown</td><td>Lipps, Inc.</td></tr>
+<tr><td>Gabrielle</td><td>Dreams</td></tr>
+<tr><td>Gangsta's Paradise</td><td>Coolio &amp; L.V.</td></tr>
+<tr><td>Garth Brooks</td><td>The Dance</td></tr>
+<tr><td>George Benson</td><td>In Your Eyes</td></tr>
+<tr><td>George Benson</td><td>Nothing's Gonna Change My Love For You (Piano)</td></tr>
+<tr><td>George Harrison</td><td>Got My Mind Set on You</td></tr>
+<tr><td>George Michael</td><td>Careless Whisper (Piano)</td></tr>
+<tr><td>George Michael</td><td>Freedom! '90</td></tr>
+<tr><td>George Michael</td><td>One More Try</td></tr>
+<tr><td>ABBA</td><td>Gimme! Gimme! Gimme! (A Man After Midnight)</td></tr>
+<tr><td>Gina G</td><td>Ooh Aah... Just A Little Bit</td></tr>
+<tr><td>Gina T</td><td>Sail Over Seven Seas ( Songs)</td></tr>
+<tr><td>Gino Padella</td><td>Closer You And I</td></tr>
+<tr><td>Alicia Keys</td><td>Girl on Fire (main version)</td></tr>
+<tr><td></td><td>Girl On Fire | Alicia Keys</td></tr>
+<tr><td>Cyndi Lauper</td><td>Girls Just Want to Have Fun</td></tr>
+<tr><td>Giveon</td><td>NUMB</td></tr>
+<tr><td>Gnarls Barkley</td><td>Crazy</td></tr>
+<tr><td>Goo Goo Dolls</td><td>Iris</td></tr>
+<tr><td>Mary MacGregor</td><td>Good Friend</td></tr>
+<tr><td></td><td>Goodbye Girl</td></tr>
+<tr><td>David Pomeranz</td><td>GOT TO BELIEVE IN MAGIC</td></tr>
+<tr><td></td><td>Got To Believe in Magic</td></tr>
+<tr><td>Green Day</td><td>Basket Case</td></tr>
+<tr><td>Tom Jones</td><td>Green Green Grass Of Home</td></tr>
+<tr><td>Tom Jones</td><td>Green Green Grass of Home</td></tr>
+<tr><td></td><td>Gregg Allman Band I'm No Angel with Lyrics in Description</td></tr>
+<tr><td>Grover Washington Jr ft. Bill Withers</td><td>Just The Two Of Us</td></tr>
+<tr><td>Guy Sebastian</td><td>Angels Brought Me Here</td></tr>
+<tr><td>Guys Next Door</td><td>I've Been Waiting For You</td></tr>
+<tr><td>Haddaway</td><td>What Is Love (7 Mix)</td></tr>
+<tr><td>Hamilton, Joe Frank &amp; Reynolds</td><td>Fallin' In Love</td></tr>
+<tr><td>Happy</td><td>Pharrell Williams</td></tr>
+<tr><td></td><td>Happy Man _ CHICAGO</td></tr>
+<tr><td>ABBA</td><td>Happy New Year</td></tr>
+<tr><td>The Turtles ( Lyrics )</td><td>Happy Together</td></tr>
+<tr><td></td><td>Hard to Handle )</td></tr>
+<tr><td>Heart</td><td>Alone</td></tr>
+<tr><td></td><td>Heart of Glass ~ Blondie ~ 808</td></tr>
+<tr><td>Helen Reddy</td><td>I Can't Say Goodbye To You</td></tr>
+<tr><td>The Beatles</td><td>Hello Goodbye</td></tr>
+<tr><td></td><td>Help</td></tr>
+<tr><td>Help Me Make It Through the Night</td><td>Sammi Smith</td></tr>
+<tr><td></td><td>Helplessly Hoping [</td></tr>
+<tr><td>3 Doors Down</td><td>Here Without You</td></tr>
+<tr><td>The Beatles</td><td>Here, There and Everywhere</td></tr>
+<tr><td>Mariah Carey</td><td>Hero</td></tr>
+<tr><td>Hey Ya! (Radio Mix</td><td>Club Mix) - OutKast</td></tr>
+<tr><td>Train</td><td>Hey, Soul Sister</td></tr>
+<tr><td>Billy Joel</td><td>Honesty</td></tr>
+<tr><td>Elton John</td><td>Honky Cat</td></tr>
+<tr><td>HOPELESSLY DEVOTED TO YOU</td><td>Olivia Newton-John</td></tr>
+<tr><td></td><td>hotel california</td></tr>
+<tr><td>The Animals (Acoustic)</td><td>House Of The Rising Sun</td></tr>
+<tr><td></td><td>How Can I Tell You by Lani Hall</td></tr>
+<tr><td></td><td>How Can I Tell You | Lani Hall</td></tr>
+<tr><td>Bee Gees</td><td>HOW DEEP IS YOUR LOVE</td></tr>
+<tr><td>Bee Gees</td><td>HOW DEEP IS YOUR LOVE</td></tr>
+<tr><td>Hozier</td><td>Work Song</td></tr>
+<tr><td>Huey Lewis &amp; The News</td><td>The Power Of Love</td></tr>
+<tr><td></td><td>Hush</td></tr>
+<tr><td>Tom Jones</td><td>I (Who Have Nothing)</td></tr>
+<tr><td></td><td>I Am...I Said</td></tr>
+<tr><td>Genesis</td><td>I Can't Dance</td></tr>
+<tr><td>David Gates</td><td>I CAN'T FIND THE WORDS TO SAY GOODBYE</td></tr>
+<tr><td>Helen Reddy</td><td>I CAN'T SAY GOODBYE TO YOU</td></tr>
+<tr><td>I Can't Stop Loving You</td><td>Martina McBride</td></tr>
+<tr><td>The Spinners</td><td>I DON'T WANT TO LOSE YOU</td></tr>
+<tr><td>I Don't Want to Talk About It</td><td>( ) Rod Stewart</td></tr>
+<tr><td>Jim Croce</td><td>I Got a Name</td></tr>
+<tr><td>I Have Nothing</td><td>The Bodyguard (Whitney Houston)</td></tr>
+<tr><td>Anne Murray</td><td>I Just Fall In Love Again</td></tr>
+<tr><td></td><td>I Need To Be In Love The Carpenters Instrumental Cover Song (Instrumental)</td></tr>
+<tr><td>America</td><td>I NEED YOU</td></tr>
+<tr><td>America</td><td>I Need You</td></tr>
+<tr><td>Dionne Warwick</td><td>I Say a Little Prayer</td></tr>
+<tr><td>Bee Gees</td><td>I STARTED A JOKE</td></tr>
+<tr><td>Bee Gees</td><td>I Started A Joke, with lyrics</td></tr>
+<tr><td>Whitney Houston</td><td>I Wanna Dance with Somebody (Who Loves Me)</td></tr>
+<tr><td>Backstreet Boys</td><td>I Want It That Way</td></tr>
+<tr><td>Queen</td><td>I Want to Break Free</td></tr>
+<tr><td>I WAS LOOKING FOR SOMEONE TO LOVE</td><td>Leif Garrett</td></tr>
+<tr><td>I WILL STILL LOVE YOU</td><td>Stonebolt</td></tr>
+<tr><td>I WISH THAT I WAS MAKING LOVE</td><td>ALESSI BROTHERS</td></tr>
+<tr><td>I Won't Last A Day Without You</td><td>Paul Williams</td></tr>
+<tr><td></td><td>I Write The Songs</td></tr>
+<tr><td>I'd Really Love To See You Tonight (Original)</td><td>England Dan (High Quality)</td></tr>
+<tr><td>I'LL ALWAYS LOVE YOU</td><td>Craig Ruhnke</td></tr>
+<tr><td>Jim Croce</td><td>I'll Have To Say I Love You In A Song</td></tr>
+<tr><td>Dionne Warwick</td><td>I'll Never Love This Way Again</td></tr>
+<tr><td>10cc</td><td>I'm Not in Love</td></tr>
+<tr><td>Bruce Springsteen</td><td>I'm on Fire</td></tr>
+<tr><td>The Stylistics</td><td>I'm Stone In Love With You</td></tr>
+<tr><td>Charlene</td><td>I'VE NEVER BEEN TO ME</td></tr>
+<tr><td>Bread</td><td>IF</td></tr>
+<tr><td></td><td>IF EVER I SEE YOU AGAIN Roberta Flack</td></tr>
+<tr><td>If I Could Reach You</td><td>(The 5th Dimension)</td></tr>
+<tr><td></td><td>if i could reach you</td></tr>
+<tr><td>James Taylor</td><td>If I Keep My Heart Out Of Sight</td></tr>
+<tr><td>Barry Manilow</td><td>If I Should Love Again</td></tr>
+<tr><td></td><td>IF I SING YOU A LOVE SONG | Bonnie Tyle MINUS ONE</td></tr>
+<tr><td></td><td>If You Leave Me Now | Chicago</td></tr>
+<tr><td></td><td>If You Remember Me</td></tr>
+<tr><td>David Pomeranz</td><td>IF YOU WALKED AWAY</td></tr>
+<tr><td>David Pomeranz</td><td>If You Walked Away</td></tr>
+<tr><td></td><td>If You Walked Away</td></tr>
+<tr><td>IKAW ANG AKING MAHAL</td><td>by VST and CO.</td></tr>
+<tr><td>John Lennon</td><td>Imagine</td></tr>
+<tr><td></td><td>Imagine</td></tr>
+<tr><td></td><td>In My Life</td></tr>
+<tr><td>Mungo Jerry</td><td>In The Summertime</td></tr>
+<tr><td>INXS</td><td>Never Tear Us Apart</td></tr>
+<tr><td></td><td>Is It Okay If I Call You Mine</td></tr>
+<tr><td>Stephen Bishop</td><td>IT MIGHT BE YOU</td></tr>
+<tr><td>Roxette</td><td>It Must Have Been Love</td></tr>
+<tr><td>IT TAKES A MAN AND A WOMAN</td><td>Teri DeSario</td></tr>
+<tr><td>It Takes Too Long To Learn To Live Alone</td><td>Eydie Gorme</td></tr>
+<tr><td>Elvis Presley</td><td>It's Now or Never</td></tr>
+<tr><td>England Dan &amp; John Ford Coley</td><td>It's Sad To Belong</td></tr>
+<tr><td>Carole King</td><td>It's Too Late</td></tr>
+<tr><td>Elvis Presley</td><td>Jailhouse Rock</td></tr>
+<tr><td>James Brown</td><td>I Feel Good</td></tr>
+<tr><td>James Brown</td><td>I Got You (I Feel Good)</td></tr>
+<tr><td>James Ingram</td><td>Just Once</td></tr>
+<tr><td>Janet Basco</td><td>You Made Me Live Again</td></tr>
+<tr><td>John Lennon</td><td>Jealous Guy</td></tr>
+<tr><td>Jeff Buckley</td><td>Hallelujah</td></tr>
+<tr><td>Jefferson Airplane</td><td>Uncle Sam Blues at Woodstock</td></tr>
+<tr><td></td><td>Jennifer</td></tr>
+<tr><td>Jim Brickman, Collin Raye, Susan Ashton</td><td>The Gift</td></tr>
+<tr><td>Jim Croce</td><td>Bad Bad Leroy Brown</td></tr>
+<tr><td>Jim Croce</td><td>I'll Have To Say I Love You In A Song</td></tr>
+<tr><td>Jim Croce</td><td>Time In A Bottle</td></tr>
+<tr><td>Joan Jett &amp; The Blackhearts</td><td>I Love Rock 'N Roll</td></tr>
+<tr><td>Joey Albert</td><td>I Remember The Boy</td></tr>
+<tr><td>Joey Albert</td><td>Tell Me</td></tr>
+<tr><td>John Denver</td><td>Take Me Home, Country Roads</td></tr>
+<tr><td>John Legend</td><td>All Of Me</td></tr>
+<tr><td>John Lennon</td><td>Imagine</td></tr>
+<tr><td>John Lennon</td><td>Imagine</td></tr>
+<tr><td>John Newman</td><td>Love Me Again</td></tr>
+<tr><td>Johnny Mathis</td><td>Chances Are</td></tr>
+<tr><td>Joji</td><td>Like You Do</td></tr>
+<tr><td>Miley Cyrus</td><td>Jolene</td></tr>
+<tr><td>Jordin Sparks &amp; Chris Brown</td><td>No Air (Duet )</td></tr>
+<tr><td>Jorja Smith</td><td>Teenage Fantasy</td></tr>
+<tr><td>Joshua Kadison</td><td>Beautiful In My Eyes</td></tr>
+<tr><td>Journey</td><td>Don't Stop Believin'</td></tr>
+<tr><td>Journey</td><td>Open Arms</td></tr>
+<tr><td>Judy Boucher</td><td>Can't Be With You Tonight</td></tr>
+<tr><td>Air Supply</td><td>Just As I Am</td></tr>
+<tr><td>Just Don't Want To Be Lonely</td><td>Ronnie Dyson</td></tr>
+<tr><td>Just Give Me a Reason</td><td>Pink &amp; Nate Ruess</td></tr>
+<tr><td></td><td>Just Remember I Love You | Firefall</td></tr>
+<tr><td>Justin Bieber</td><td>DAISIES</td></tr>
+<tr><td>Justin Bieber</td><td>YUKON</td></tr>
+<tr><td>Justin Timberlake</td><td>Cry Me A River</td></tr>
+<tr><td>Justin Timberlake</td><td>Selfish</td></tr>
+<tr><td>K-Ci &amp; Jojo</td><td>All My Life</td></tr>
+<tr><td>KALEO</td><td>Run No More</td></tr>
+<tr><td>Kali Uchis</td><td>I Wish you Roses</td></tr>
+<tr><td></td><td>Cathy Irving I Never Dreamed Someone Like You</td></tr>
+<tr><td></td><td>It Takes A Man And A Woman by Teri De Sario</td></tr>
+<tr><td>Matt Monro</td><td>Portrait of My Love</td></tr>
+<tr><td>GREG KIHN BAND</td><td>JEOPARDY</td></tr>
+<tr><td></td><td>Kiss Hard Luck Woman</td></tr>
+<tr><td>Run To Me</td><td>Dionne Warwick &amp; Barry Manilow</td></tr>
+<tr><td></td><td>RUSH TOM SAWYER</td></tr>
+<tr><td></td><td>Savoy Brown She's Got A Ring In His Nose And A Ring On Her Hand</td></tr>
+<tr><td>That's What Friends Are For</td><td>Dionne Warwick &amp; Gladys Knight, Elton John &amp; Stevie Wonder *</td></tr>
+<tr><td>America</td><td>Don't cross the river</td></tr>
+<tr><td>Karina Pasian</td><td>Slow Motion</td></tr>
+<tr><td>Karyn White</td><td>Superwoman</td></tr>
+<tr><td>Kate Bush</td><td>Running Up That Hill (A Deal With God)</td></tr>
+<tr><td>Katrina and The Waves</td><td>Walking On Sunshine</td></tr>
+<tr><td>Kehlani</td><td>Back and Forth (feat. Missy Elliott)</td></tr>
+<tr><td>Kehlani</td><td>Folded</td></tr>
+<tr><td>Kendrick Lamar &amp; SZA</td><td>luther</td></tr>
+<tr><td>Kenny Loggins</td><td>Danny's Song</td></tr>
+<tr><td>Kenny Rogers &amp; Dolly Parton</td><td>Sometimes When We Touch</td></tr>
+<tr><td>Kenny Rogers</td><td>Lady</td></tr>
+<tr><td>Kenny Rogers</td><td>Through The Years</td></tr>
+<tr><td>Keyshia Cole</td><td>Love</td></tr>
+<tr><td></td><td>Kill Bill Lyrics Instrumental | SZA (Instrumental with Lyrics)</td></tr>
+<tr><td>The Fugees &amp; Lauryn Hill</td><td>Killing Me Softly</td></tr>
+<tr><td>Roberta Flack</td><td>Killing Me Softly With His Song</td></tr>
+<tr><td>Roberta Flack</td><td>KILLING ME SOFTLY WITH HIS SONG</td></tr>
+<tr><td></td><td>Kiss Detroit Rock City</td></tr>
+<tr><td>Guns N' Roses</td><td>Knockin' on Heaven's Door</td></tr>
+<tr><td>Kylie Minogue</td><td>The Loco Motion</td></tr>
+<tr><td>Labrinth</td><td>Never Felt So Alone</td></tr>
+<tr><td>Lani Misalucha</td><td>Tunay Na Mahal</td></tr>
+<tr><td>Lara Fabian</td><td>Broken Vow</td></tr>
+<tr><td></td><td>Laughter in The Rain</td></tr>
+<tr><td>Lauryn Hill</td><td>Can't Take My Eyes Off of You - (I Love You Baby)</td></tr>
+<tr><td>Lauryn Hill</td><td>Doo Wop (That Thing)</td></tr>
+<tr><td>Lauryn Hill</td><td>Killing Me Softly With His Song</td></tr>
+<tr><td>Lea Salonga</td><td>The Journey</td></tr>
+<tr><td>Dan Fogelberg</td><td>LEADER OF THE BAND</td></tr>
+<tr><td>LeAnn Rimes</td><td>How Do I Live</td></tr>
+<tr><td>Led Zeppelin</td><td>Whole Lotta Love</td></tr>
+<tr><td>Led Zepplin</td><td>Rock and Roll</td></tr>
+<tr><td>Lee Young Ji , D.O.</td><td>Small girl</td></tr>
+<tr><td>Lemon Tree</td><td>Fool's Garden</td></tr>
+<tr><td>Leonard Cohen</td><td>Hallelujah</td></tr>
+<tr><td>Let Her Go</td><td>Passenger</td></tr>
+<tr><td>The Beatles</td><td>Let It Be</td></tr>
+<tr><td>Let It Go</td><td>Frozen (2013 film) (Idina Menzel)</td></tr>
+<tr><td>Rex Smith</td><td>LET'S MAKE A MEMORY</td></tr>
+<tr><td>Libianca</td><td>People</td></tr>
+<tr><td></td><td>Life Will Go On by Barry Manilow</td></tr>
+<tr><td>Limahl</td><td>Never Ending Story</td></tr>
+<tr><td>Lionel Richie &amp; Diana Ross</td><td>Endless Love</td></tr>
+<tr><td>Lionel Richie</td><td>All Night Long (All Night)</td></tr>
+<tr><td>Lionel Richie</td><td>Dancing On The Ceiling</td></tr>
+<tr><td>Lionel Richie</td><td>Hello</td></tr>
+<tr><td>Lionel Richie</td><td>Say You, Say Me</td></tr>
+<tr><td>Lionel Richie</td><td>Stuck On You</td></tr>
+<tr><td>Lips of an Angel</td><td>Hinder</td></tr>
+<tr><td>Lisa Stansfield</td><td>All Around the World</td></tr>
+<tr><td>Roxette</td><td>Listen to Your Heart</td></tr>
+<tr><td>Bon Jovi</td><td>Livin' on a Prayer</td></tr>
+<tr><td>Living Colour</td><td>Cult of Personality</td></tr>
+<tr><td></td><td>LIVING TOGETHER</td></tr>
+<tr><td></td><td>LIVING TOGETHER-fire and rain instrumental (Instrumental)</td></tr>
+<tr><td>Dan Fogelberg</td><td>Longer</td></tr>
+<tr><td>LOOKING THROUGH THE EYES OF LOVE</td><td>Melissa Manchester</td></tr>
+<tr><td>Lost Without Your Love</td><td>( ) Bread</td></tr>
+<tr><td>Bread</td><td>LOST WITHOUT YOUR LOVE</td></tr>
+<tr><td></td><td>Love Gun</td></tr>
+<tr><td>Engelbert Humperdinck</td><td>Love Is a Many Splendored Thing</td></tr>
+<tr><td>Pat Boone</td><td>Love Letters in the Sand</td></tr>
+<tr><td></td><td>Love Me (</td></tr>
+<tr><td>Carpenters</td><td>Love Me For What I Am</td></tr>
+<tr><td>The Carpenters ( Cover)</td><td>Love Me For What I Am</td></tr>
+<tr><td>Engelbert Humperdinck</td><td>Love Me with All Your Heart</td></tr>
+<tr><td>LOVE'S GROWN DEEP</td><td>Kenny Nolan</td></tr>
+<tr><td>Loving Arms</td><td>Kris KristoffersonRita Coolidge</td></tr>
+<tr><td></td><td>Loving Arms Kris Kristofferson &amp; Rita Coolidge</td></tr>
+<tr><td>The Beatles</td><td>Lucy in the Sky with Diamonds</td></tr>
+<tr><td>Luke Chiang</td><td>Shouldn't Be</td></tr>
+<tr><td>Lulu</td><td>Boom Bang a Bang</td></tr>
+<tr><td>Luther Vandross</td><td>I'd Rather</td></tr>
+<tr><td>Lynyrd Skynyrd</td><td>Simple Man</td></tr>
+<tr><td>Madonna</td><td>Cherish</td></tr>
+<tr><td>Madonna</td><td>Holiday</td></tr>
+<tr><td>Madonna</td><td>Hollywood</td></tr>
+<tr><td>Madonna</td><td>Into the Groove</td></tr>
+<tr><td>Madonna</td><td>La Isla Bonita</td></tr>
+<tr><td>Madonna</td><td>Like A Prayer</td></tr>
+<tr><td>Madonna</td><td>Live to Tell</td></tr>
+<tr><td>Madonna</td><td>Sorry</td></tr>
+<tr><td>Madonna</td><td>Vogue</td></tr>
+<tr><td>Madonna</td><td>You Must Love Me</td></tr>
+<tr><td>Madonna</td><td>You'll See</td></tr>
+<tr><td>Make It With You</td><td>( ) Bread</td></tr>
+<tr><td>Air Supply</td><td>Making Love Out of Nothing at All</td></tr>
+<tr><td>Mamas And The Papas</td><td>California Dreamin'</td></tr>
+<tr><td>ABBA</td><td>Mamma Mia</td></tr>
+<tr><td>Barry Manilow</td><td>MANDY</td></tr>
+<tr><td>Mariah Carey</td><td>Always Be My Baby</td></tr>
+<tr><td>Mariah Carey</td><td>Hero</td></tr>
+<tr><td>Mariah Carey</td><td>My All</td></tr>
+<tr><td>Mariah Carey</td><td>Obsessed</td></tr>
+<tr><td>Mariah Carey</td><td>Touch My Body</td></tr>
+<tr><td>Mariah Carey</td><td>We Belong Together</td></tr>
+<tr><td>Mariah Carey</td><td>Without You</td></tr>
+<tr><td>Mariah Carey, Westlife</td><td>Against All Odds (Take A Look at Me Now)</td></tr>
+<tr><td>Mario</td><td>Let Me Love You</td></tr>
+<tr><td>Maroon 5</td><td>Sunday Morning</td></tr>
+<tr><td>Marvin Gaye, Tammi Terrell</td><td>Ain't No Mountain High Enough</td></tr>
+<tr><td>Matt Monro</td><td>Yesterday</td></tr>
+<tr><td>Matthew Wilder</td><td>Break My Stride</td></tr>
+<tr><td>McCartney, Paul &amp; Wings</td><td>Band On The Run ( &amp; Lyrics)</td></tr>
+<tr><td>McCartney, Paul</td><td>Silly Love Songs ( &amp; Lyrics)</td></tr>
+<tr><td>Menudo</td><td>If You're Not Here (By My Side)</td></tr>
+<tr><td>Michael Bolton</td><td>How Am I Supposed To Live Without You</td></tr>
+<tr><td>Michael Jackson</td><td>Beat It (Backing Track Visualizer)</td></tr>
+<tr><td>Michael Jackson</td><td>Billie Jean</td></tr>
+<tr><td>Michael Jackson</td><td>Chicago</td></tr>
+<tr><td>Michael Jackson</td><td>Human Nature</td></tr>
+<tr><td>Michael Jackson</td><td>The Way You Make Me Feel</td></tr>
+<tr><td>Michael Jackson</td><td>You Are Not Alone</td></tr>
+<tr><td>Michael Learns To Rock</td><td>That's Why You Go Away</td></tr>
+<tr><td>Michael Ruff</td><td>More Than You'll Ever Know</td></tr>
+<tr><td>Michael Sembello</td><td>Maniac</td></tr>
+<tr><td>Miguel</td><td>Sure Thing</td></tr>
+<tr><td>Milli Vanilli</td><td>Blame It on the Rain</td></tr>
+<tr><td>Milli Vanilli</td><td>I'm Gonna Miss You</td></tr>
+<tr><td>Boston</td><td>More Than A Feeling</td></tr>
+<tr><td>Bee Gees</td><td>More Than a Woman</td></tr>
+<tr><td>Beyoncé</td><td>MORNING DEW (DONK)</td></tr>
+<tr><td>Cat Stevens</td><td>Morning Has Broken</td></tr>
+<tr><td>Mr Big</td><td>To Be With You</td></tr>
+<tr><td>The Killers</td><td>Mr. Brightside</td></tr>
+<tr><td>Counting Crows</td><td>Mr. Jones</td></tr>
+<tr><td>The Byrds</td><td>Mr. Tambourine Man</td></tr>
+<tr><td></td><td>Mrs Robinson | Simon &amp; Garfunkel</td></tr>
+<tr><td>AMERICA</td><td>MUSKRAT LOVE</td></tr>
+<tr><td>MY FAIR SHARE</td><td>Seals &amp; Crofts</td></tr>
+<tr><td>Céline Dion (Titanic)</td><td>My Heart Will Go On</td></tr>
+<tr><td>Evanescence</td><td>My Immortal</td></tr>
+<tr><td>Natalie Cole</td><td>Miss You Like Crazy</td></tr>
+<tr><td>Natalie Cole</td><td>Starting Over Again</td></tr>
+<tr><td>Natalie Imbruglia</td><td>Torn</td></tr>
+<tr><td>Nazareth</td><td>Dream On</td></tr>
+<tr><td>Neil Diamond</td><td>Love On The Rocks</td></tr>
+<tr><td>Nena</td><td>99 Red Balloons</td></tr>
+<tr><td>Neocolours</td><td>Maybe</td></tr>
+<tr><td>David Gates</td><td>NEVER LET HER GO</td></tr>
+<tr><td>The Association</td><td>Never My Love</td></tr>
+<tr><td>Dan Hill</td><td>NEVER THOUGHT (That I Could Love)</td></tr>
+<tr><td>Nicolette Larson</td><td>Lotta Love ( &amp; Lyrics)</td></tr>
+<tr><td>Nina Simone</td><td>I Put A Spell On You</td></tr>
+<tr><td>Nobody Does It Better</td><td>James Bond (Carly Simon)</td></tr>
+<tr><td></td><td>Nobody Does It Better</td></tr>
+<tr><td>George Benson</td><td>Nothing's Gonna Change My Love for You</td></tr>
+<tr><td>Guns N' Roses</td><td>November Rain</td></tr>
+<tr><td></td><td>Now And Forever</td></tr>
+<tr><td>The Beatles</td><td>Nowhere Man</td></tr>
+<tr><td>Oasis</td><td>Champagne Supernova</td></tr>
+<tr><td>Oasis</td><td>Wonderwall</td></tr>
+<tr><td>Of All The Things</td><td>Dennis Lambert</td></tr>
+<tr><td>Oh Lori Alessi</td><td>Brothers</td></tr>
+<tr><td></td><td>Oh Lori</td></tr>
+<tr><td></td><td>Oh, Lori | Alessi Brothers</td></tr>
+<tr><td>Oh, Pretty Woman</td><td>Roy Orbison</td></tr>
+<tr><td>Olivia Dean</td><td>So Easy (To Fall In Love)</td></tr>
+<tr><td>Stephen Bishop</td><td>On And On</td></tr>
+<tr><td>ONCE THERE WAS A LOVE</td><td>Jose Feliciano</td></tr>
+<tr><td>ONE FRIEND</td><td>Dan Seals</td></tr>
+<tr><td>One Way Ticket</td><td>Eruption</td></tr>
+<tr><td>America ( Cover)</td><td>Only In Your Heart</td></tr>
+<tr><td>Original instrumental with lyrics- THE DOORS</td><td>RIDERS ON THE STORM (Instrumental with Lyrics)</td></tr>
+<tr><td>Otis Redding</td><td>(Sittin' On) the Dock of the Bay</td></tr>
+<tr><td>OUR LOVE (DON'T THROW IT ALL AWAY)</td><td>Andy Gibb</td></tr>
+<tr><td>Parokya Ni Edgar</td><td>Halaga</td></tr>
+<tr><td>DAVID GATES</td><td>PART-TIME LOVE</td></tr>
+<tr><td>Miley Cyrus</td><td>Party in the U.S.A.</td></tr>
+<tr><td>Pat Benatar</td><td>We Belong</td></tr>
+<tr><td>Pat Boone</td><td>April Love</td></tr>
+<tr><td>Guns N' Roses</td><td>Patience</td></tr>
+<tr><td>Patty Smyth, Don Henley</td><td>Sometimes Love Just Ain't Enough</td></tr>
+<tr><td>Paul Anka</td><td>Lonely Boy with Lyrics</td></tr>
+<tr><td>Paul McCartney</td><td>Another Day</td></tr>
+<tr><td>Peabo Bryson</td><td>If Ever You're in My Arms Again</td></tr>
+<tr><td>The Beatles</td><td>Penny Lane</td></tr>
+<tr><td></td><td>Perry Como – Killing Me Softly With Her Song</td></tr>
+<tr><td>Phil Collins</td><td>Against All Odds</td></tr>
+<tr><td>Phil Collins</td><td>Another Day in Paradise</td></tr>
+<tr><td>Phil Collins</td><td>In The Air Tonight</td></tr>
+<tr><td>Pink Floyd</td><td>Another Brick in the Wall</td></tr>
+<tr><td>Platters, The</td><td>My Prayer ( &amp; Lyrics)</td></tr>
+<tr><td>Player</td><td>Baby Come Back</td></tr>
+<tr><td>Please Don't Stop Remembering</td><td>Randy Edelman</td></tr>
+<tr><td>Poison</td><td>Every Rose Has Its Thorn</td></tr>
+<tr><td>Poison</td><td>Talk Dirty To Me</td></tr>
+<tr><td>Pokémon</td><td>Theme Song</td></tr>
+<tr><td>Matt Monro</td><td>Portrait Of My Love</td></tr>
+<tr><td></td><td>Put Your Head On My Shoulder</td></tr>
+<tr><td>Paul Anka</td><td>PUT YOUR HEAD ON MY SHOULDER (Piano)</td></tr>
+<tr><td>Engelbert Humperdinck</td><td>Quando, Quando, Quando</td></tr>
+<tr><td>Queen &amp; David Bowie</td><td>Under Pressure</td></tr>
+<tr><td>Queen</td><td>Another One Bites The Dust</td></tr>
+<tr><td>Queen</td><td>Bohemian Rhapsody</td></tr>
+<tr><td>Queen</td><td>I Want It All</td></tr>
+<tr><td>Queen</td><td>I Want To Break Free</td></tr>
+<tr><td>Queen</td><td>The Show Must Go On</td></tr>
+<tr><td>Queen</td><td>Too Much Love Will Kill You</td></tr>
+<tr><td></td><td>Queen Bohemian Rhapsody</td></tr>
+<tr><td>R.E.M</td><td>Losing My Religion</td></tr>
+<tr><td>R.E.M.</td><td>It's The End Of The World As We Know It (And I Feel Fine)</td></tr>
+<tr><td>Rachel Platten</td><td>Fight Song</td></tr>
+<tr><td>Radiohead</td><td>Creep</td></tr>
+<tr><td>Radiohead</td><td>No Surprises</td></tr>
+<tr><td>Rag'n'Bone Man</td><td>Skin</td></tr>
+<tr><td>Raindrops Keep Fallin' On My Head</td><td>B. J. Thomas</td></tr>
+<tr><td></td><td>Raindrops Keep Falling On My Head (MR for Male, Most Beautiful Orchestra)</td></tr>
+<tr><td></td><td>Rainy Days And Mondays</td></tr>
+<tr><td>Ray Parker Jr</td><td>The Past</td></tr>
+<tr><td>Ray Parker Jr.</td><td>Ghostbusters</td></tr>
+<tr><td>Ray Stevens</td><td>Everything is Beautiful (1970)</td></tr>
+<tr><td>RAYE</td><td>Ice Cream Man.</td></tr>
+<tr><td>RAYE</td><td>Nightingale Lane.</td></tr>
+<tr><td></td><td>RBTV Channel: MORNING GIRL video</td></tr>
+<tr><td>REALITY</td><td>Richard Sanderson)</td></tr>
+<tr><td>Rod Stewart</td><td>Reason To Believe</td></tr>
+<tr><td>Reflection</td><td>Mulan</td></tr>
+<tr><td>Regine Velasquez</td><td>You Are My Song</td></tr>
+<tr><td>REO Speedwagon</td><td>Can't Fight This Feeling</td></tr>
+<tr><td>Kenny Loggins</td><td>Return to Pooh Corner</td></tr>
+<tr><td>Rey Valera</td><td>Walang Kapalit</td></tr>
+<tr><td>Rhinestone Cowboy</td><td>Glen Campbell</td></tr>
+<tr><td>The Cascades</td><td>Rhythm of the Rain</td></tr>
+<tr><td>Ricchi E Poveri</td><td>Sara` perche´ ti amo</td></tr>
+<tr><td>Richard Marx</td><td>Now &amp; Forever</td></tr>
+<tr><td>Richard Marx</td><td>Right Here Waiting</td></tr>
+<tr><td>Ricky Martin</td><td>Livin' La Vida Loca</td></tr>
+<tr><td>Rihanna</td><td>Kiss It Better</td></tr>
+<tr><td>Rihanna</td><td>Take A Bow</td></tr>
+<tr><td>Rihanna, JAY-Z</td><td>Umbrella</td></tr>
+<tr><td>Steely Dan</td><td>Rikki Don't Lose That Number</td></tr>
+<tr><td></td><td>RIKKI DON'T LOSE THAT NUMBER Steely Dan (Instrumental with Lyrics)</td></tr>
+<tr><td>Rio Soundtrack</td><td>Let Me Take You To Rio</td></tr>
+<tr><td>Rivermaya</td><td>214</td></tr>
+<tr><td>Rivermaya</td><td>If</td></tr>
+<tr><td>Robbie Williams</td><td>Angels</td></tr>
+<tr><td>Roberta Flack &amp; Donny Hathaway</td><td>Where Is The Love</td></tr>
+<tr><td>Roberta Flack</td><td>Killing Me Softly - Lyrics</td></tr>
+<tr><td>Roberto Carlos</td><td>Cama e Mesa</td></tr>
+<tr><td>Robin S</td><td>Show Me Love</td></tr>
+<tr><td>B.B. King</td><td>Rock Me Baby</td></tr>
+<tr><td>Bad Company</td><td>Rock Steady</td></tr>
+<tr><td>Rod Stewart</td><td>Maggie May</td></tr>
+<tr><td>Rod Stewart</td><td>Da Ya Think I'm Sexy</td></tr>
+<tr><td>Rod Stewart</td><td>Have I Told You Lately</td></tr>
+<tr><td>Rod Stewart</td><td>I Don't Want To Talk About It</td></tr>
+<tr><td></td><td>Rod Stewart – I Was Only Joking</td></tr>
+<tr><td>Roel Cortez</td><td>Sa Mata Makikita</td></tr>
+<tr><td>Ronan Keating</td><td>When You Say Nothing At All</td></tr>
+<tr><td>Roxette</td><td>It Must Have Been Love</td></tr>
+<tr><td>Roxette</td><td>Listen To Your Heart</td></tr>
+<tr><td>Run–D.M.C.</td><td>Walk This Way</td></tr>
+<tr><td>Rusted Root</td><td>Send Me On My Way</td></tr>
+<tr><td>Rusted Root</td><td>Send Me On My Way (Piano)</td></tr>
+<tr><td>Commodores</td><td>Sail On</td></tr>
+<tr><td>Rod Stewart</td><td>SAILING</td></tr>
+<tr><td>Sam Cooke</td><td>A Change Is Gonna Come</td></tr>
+<tr><td>Sam Smith</td><td>Fire On Fire</td></tr>
+<tr><td>Sam Smith</td><td>I'm Not The Only One</td></tr>
+<tr><td>Sam Smith</td><td>Lay Me Down</td></tr>
+<tr><td>Sam Smith</td><td>Like I Can</td></tr>
+<tr><td>Sam Smith</td><td>Too Good At Goodbyes</td></tr>
+<tr><td>Dan Fogelberg</td><td>Same Old Lang Syne</td></tr>
+<tr><td>Sammy Kershaw</td><td>For Years</td></tr>
+<tr><td>America ( Cover)</td><td>Sandman</td></tr>
+<tr><td>Sarah McLachlan</td><td>Angel</td></tr>
+<tr><td>Rolling Stones</td><td>Satisfaction</td></tr>
+<tr><td>Savage Garden</td><td>I Knew I Loved You</td></tr>
+<tr><td>Savage Garden</td><td>Truly Madly Deeply</td></tr>
+<tr><td>Seal</td><td>Kiss From A Rose</td></tr>
+<tr><td>Seal</td><td>Kiss from a Rose</td></tr>
+<tr><td>Sealed with a Kiss</td><td>Brian Hyland</td></tr>
+<tr><td>Seals &amp; Croff</td><td>We May Never Pass This Way Again ( &amp; Lyrics)</td></tr>
+<tr><td>Selena</td><td>Como La Flor</td></tr>
+<tr><td>Selena</td><td>Dreaming of You</td></tr>
+<tr><td>Selena</td><td>Dreaming Of You</td></tr>
+<tr><td>Neil Diamond</td><td>September Morn</td></tr>
+<tr><td>Señorita</td><td>Shawn Mendes &amp; Camila Cabello</td></tr>
+<tr><td>Shalala Lala</td><td>Vengaboys</td></tr>
+<tr><td>Shallow</td><td>A Star is Born (2018 film) (Lady Gaga &amp; Bradley Cooper)</td></tr>
+<tr><td>Ed Sheeran</td><td>Shape of You</td></tr>
+<tr><td>She</td><td>Elvis Costello</td></tr>
+<tr><td></td><td>She Believes In Me</td></tr>
+<tr><td>Matthew Fisher</td><td>She Makes Me Feel</td></tr>
+<tr><td>She's A Lady</td><td>Richard Sanderson</td></tr>
+<tr><td>Sheena Easton</td><td>Almost Over You</td></tr>
+<tr><td>Shine</td><td>Collective Soul</td></tr>
+<tr><td>Show And Tell</td><td>Al Wilson</td></tr>
+<tr><td>Show Me the Way</td><td>Peter Frampton</td></tr>
+<tr><td>SIENNA SPIRO</td><td>Die On This Hill</td></tr>
+<tr><td>SIENNA SPIRO</td><td>The Visitor</td></tr>
+<tr><td>SIENNA SPIRO</td><td>You Stole The Show</td></tr>
+<tr><td>Simon &amp; Garfunkel</td><td>Scarborough Fair</td></tr>
+<tr><td>Simon &amp; Garfunkel</td><td>The 59th street bridge song (feelin groovy) VT</td></tr>
+<tr><td>Simon &amp; Garfunkel</td><td>The Boxer - Lyrics</td></tr>
+<tr><td>Simon &amp; Garfunkel</td><td>The Sound Of Silence</td></tr>
+<tr><td>Simon And Garfunkel</td><td>59th Street Bridge Song (Feelin' Groovy)</td></tr>
+<tr><td>Simon And Garfunkel</td><td>A Hazy Shade Of Winter</td></tr>
+<tr><td>Simon and Garfunkel</td><td>Scarborough Fair ( &amp; Lyrics)</td></tr>
+<tr><td>Simple Minds</td><td>Don't You (Forget About Me)</td></tr>
+<tr><td>Rex Smith</td><td>Simply Jessie</td></tr>
+<tr><td>The Skyliners</td><td>Since I Don't Have You</td></tr>
+<tr><td>Beyoncé</td><td>Single Ladies (Put a Ring on It)</td></tr>
+<tr><td>Sir Mix-A-Lot</td><td>Posse On Broadway</td></tr>
+<tr><td>America</td><td>Sister Golden Hair</td></tr>
+<tr><td>Sixpence None The Richer</td><td>Kiss Me</td></tr>
+<tr><td>Smash Mouth</td><td>All Star</td></tr>
+<tr><td>The Platters</td><td>Smoke Gets in Your Eyes</td></tr>
+<tr><td>Deep Purple</td><td>Smoke on the Water</td></tr>
+<tr><td>Soft Cell</td><td>Tainted Love</td></tr>
+<tr><td>Solomon Burke</td><td>Cry To Me</td></tr>
+<tr><td>Queen</td><td>Somebody to Love</td></tr>
+<tr><td>Air Supply</td><td>SOMEONE WHO BELIEVES IN YOU</td></tr>
+<tr><td>Dan Hill</td><td>SOMETIMES WHEN WE TOUCH</td></tr>
+<tr><td>Barry Manilow</td><td>SOMEWHERE DOWN THE ROAD</td></tr>
+<tr><td></td><td>Somewhere Down The Road</td></tr>
+<tr><td></td><td>Song Sung Blue</td></tr>
+<tr><td>Soundgarden</td><td>Black Hole Sun</td></tr>
+<tr><td>Spandau Ballet</td><td>True</td></tr>
+<tr><td>Engelbert Humperdinck</td><td>Spanish Eyes</td></tr>
+<tr><td>Spice Girls</td><td>2 Become 1</td></tr>
+<tr><td>Spice Girls</td><td>Wannabe</td></tr>
+<tr><td>Stacey Ryan</td><td>Fall In Love Alone</td></tr>
+<tr><td>Led Zeppelin</td><td>Stairway To Heaven</td></tr>
+<tr><td>James Taylor</td><td>Steamroller Blues</td></tr>
+<tr><td>Steamroller</td><td>Engelbert Humperdinck - Stardust</td></tr>
+<tr><td>Steelheart</td><td>She's Gone</td></tr>
+<tr><td>Stephen Sanchez</td><td>SWEET LOVE</td></tr>
+<tr><td>Stephen Speaks</td><td>Passenger Seat</td></tr>
+<tr><td>Steve Lacy</td><td>Bad Habit</td></tr>
+<tr><td>Steve Lacy</td><td>Dark Red</td></tr>
+<tr><td>Steve Lacy</td><td>Static</td></tr>
+<tr><td>Steve Miller Band, The</td><td>Fly Like An Eagle ( &amp; Lyrics)</td></tr>
+<tr><td>Stevie B</td><td>Waiting For Your Love</td></tr>
+<tr><td>Stevie Nicks</td><td>Edge of Seventeen</td></tr>
+<tr><td>Stevie Wonder</td><td>Lately</td></tr>
+<tr><td>Stevie Wonder</td><td>Part-Time Lover</td></tr>
+<tr><td>Stevie Wonder</td><td>Superstition</td></tr>
+<tr><td>Eric Clapton</td><td>Still Got the Blues (For You)</td></tr>
+<tr><td>Still Got the Blues</td><td>Gary Moore</td></tr>
+<tr><td>The Beatles</td><td>Strawberry Fields Forever</td></tr>
+<tr><td>Lionel Richie</td><td>Stuck On You</td></tr>
+<tr><td>Stylistics</td><td>You Are Everything ( Lyrics)</td></tr>
+<tr><td>Maroon 5</td><td>Sugar</td></tr>
+<tr><td></td><td>Summer Breeze</td></tr>
+<tr><td>Summertime Sadness</td><td>Lana Del Rey</td></tr>
+<tr><td>Carpenters</td><td>Superstar</td></tr>
+<tr><td>Stevie Wonder</td><td>Superstition</td></tr>
+<tr><td>Survivor</td><td>Eye Of The Tiger</td></tr>
+<tr><td>Bic Runga</td><td>Sway</td></tr>
+<tr><td>Michael Bublé</td><td>Sway</td></tr>
+<tr><td>Neil Diamond</td><td>Sweet Caroline</td></tr>
+<tr><td>Guns N' Roses</td><td>Sweet Child O' Mine</td></tr>
+<tr><td>The Blues Brothers</td><td>Sweet Home Chicago</td></tr>
+<tr><td>SZA</td><td>Awkward</td></tr>
+<tr><td>SZA</td><td>Saturn</td></tr>
+<tr><td>SZA, Travis Scott</td><td>Open Arms</td></tr>
+<tr><td></td><td>Take Me Home, Country Roads</td></tr>
+<tr><td>David Gates</td><td>TAKE ME NOW</td></tr>
+<tr><td>Talk Talk</td><td>It's My Life</td></tr>
+<tr><td>Taylor Dayne</td><td>Love Will Lead You Back</td></tr>
+<tr><td>Taylor, James</td><td>Fire And Rain ( &amp; Lyrics)</td></tr>
+<tr><td>Tears For Fears</td><td>Everybody Wants To Rule The World</td></tr>
+<tr><td>Eric Clapton</td><td>Tears in Heaven</td></tr>
+<tr><td>Teddy Swims</td><td>Lose Control</td></tr>
+<tr><td></td><td>Ten To Eight</td></tr>
+<tr><td>Rupert Holmes</td><td>TERMINAL</td></tr>
+<tr><td>Michael Learns to Rock</td><td>That's Why (You Go Away)</td></tr>
+<tr><td>The Beatles</td><td>Hey Jude</td></tr>
+<tr><td>The Beatles</td><td>In My Life</td></tr>
+<tr><td>The Beatles</td><td>Let It Be</td></tr>
+<tr><td>The Beatles</td><td>Yesterday</td></tr>
+<tr><td></td><td>The Beatles-Hello, Goodbye</td></tr>
+<tr><td>The Buggles</td><td>Video Killed The Radio Star</td></tr>
+<tr><td>The Byrds</td><td>Mr Tambourine Man</td></tr>
+<tr><td>The Cardigans</td><td>Lovefool</td></tr>
+<tr><td>The Carpenters</td><td>Top Of The World</td></tr>
+<tr><td>The Clark Sisters</td><td>Is My Living in Vain</td></tr>
+<tr><td>The Cranberries</td><td>Zombie</td></tr>
+<tr><td>The Cure</td><td>Close To Me ( Rendition)</td></tr>
+<tr><td>The Cure</td><td>Friday I'm in Love with lyrics</td></tr>
+<tr><td></td><td>The Cure Boys Don't Cry</td></tr>
+<tr><td></td><td>The Cure Pictures Of You</td></tr>
+<tr><td>The Delfonics</td><td>La La Means I Love You</td></tr>
+<tr><td>Europe</td><td>The Final Countdown</td></tr>
+<tr><td>The Beatles</td><td>The Fool on the Hill</td></tr>
+<tr><td>The Great Pretender</td><td>Freddie Mercury</td></tr>
+<tr><td>The Platters</td><td>The Great Pretender</td></tr>
+<tr><td>The Guess Who</td><td>American Woman</td></tr>
+<tr><td>Bread</td><td>The Guitar Man (Original)</td></tr>
+<tr><td>Bread</td><td>The Guitar Man</td></tr>
+<tr><td>The Harder I Try</td><td>Free Movement</td></tr>
+<tr><td>The Hollies</td><td>Bus Stop</td></tr>
+<tr><td>The Animals</td><td>The House of the Rising Sun</td></tr>
+<tr><td>The Human League</td><td>Don't You Want Me</td></tr>
+<tr><td>The Isley Brothers</td><td>Twist And Shout</td></tr>
+<tr><td>The J. Geils Band</td><td>Centerfold</td></tr>
+<tr><td>The Jackson 5</td><td>I'll Be There</td></tr>
+<tr><td>The Jets</td><td>Make It Real</td></tr>
+<tr><td>The Jets</td><td>You Got It All</td></tr>
+<tr><td>The La's</td><td>There She Goes</td></tr>
+<tr><td>The Beatles</td><td>The Long and Winding Road</td></tr>
+<tr><td>The look of love</td><td>(David Hal Bacharach Burt)</td></tr>
+<tr><td></td><td>THE MIRACLE The Stylistics</td></tr>
+<tr><td>The Offspring</td><td>Pretty Fly (For A White Guy)</td></tr>
+<tr><td>David Pomeranz</td><td>The Old Songs</td></tr>
+<tr><td>The One I Love</td><td>Mike McClellan</td></tr>
+<tr><td>The Platters</td><td>Only You (And You Alone)</td></tr>
+<tr><td>The Pointer Sisters</td><td>Slow Hand</td></tr>
+<tr><td>The Police</td><td>Every Breath You Take</td></tr>
+<tr><td>The Police</td><td>Every Little Thing She Does Is Magic</td></tr>
+<tr><td>Céline Dion</td><td>The Power of Love</td></tr>
+<tr><td>The Reason</td><td>Hoobastank</td></tr>
+<tr><td>The Rembrandts</td><td>I'll Be There For You (Friends Theme Song)</td></tr>
+<tr><td>The Ronettes</td><td>Be My Baby</td></tr>
+<tr><td>The Script</td><td>The Man Who Can't Be Moved</td></tr>
+<tr><td>B.B. King</td><td>The Thrill Is Gone (with Tracy Chapman)</td></tr>
+<tr><td>Blondie</td><td>The Tide Is High</td></tr>
+<tr><td>The Time of My Life</td><td>Dirty Dancing</td></tr>
+<tr><td></td><td>The Trouble With Hello Is Goodbye (Sérgio Mendes)</td></tr>
+<tr><td>Eric Carmen</td><td>The Way We Used To Be</td></tr>
+<tr><td>The Weather Girls</td><td>It's Raining Men</td></tr>
+<tr><td>The Who</td><td>Who Are You</td></tr>
+<tr><td>ABBA</td><td>The Winner Takes It All</td></tr>
+<tr><td>There's a Kind of Hush</td><td>Herman's Hermits</td></tr>
+<tr><td>The Carpenters</td><td>There's a Kind of Hush</td></tr>
+<tr><td>These Boots Are Made for Walkin'</td><td>Nancy Sinatra</td></tr>
+<tr><td>Thin Lizzy</td><td>The Boys Are Back In Town</td></tr>
+<tr><td></td><td>Think I'm In Love Again</td></tr>
+<tr><td>Paul Anka</td><td>THINK I'M IN LOVE AGAIN</td></tr>
+<tr><td>NSYNC</td><td>This I Promise You</td></tr>
+<tr><td>This Is Me</td><td>Camp Rock</td></tr>
+<tr><td></td><td>This Time I Know It's Real</td></tr>
+<tr><td>Three Dog Night</td><td>Joy To The World</td></tr>
+<tr><td>Lionel Richie</td><td>Three Times A Lady</td></tr>
+<tr><td>Lionel Richie</td><td>Three Times a Lady</td></tr>
+<tr><td>Kenny Rogers</td><td>THROUGH THE YEARS</td></tr>
+<tr><td>Tiffany</td><td>All This Time</td></tr>
+<tr><td>Tiffany</td><td>I Think We're Alone Now</td></tr>
+<tr><td>America</td><td>Tin Man</td></tr>
+<tr><td>Tina Turner</td><td>The Best</td></tr>
+<tr><td>Tina Turner</td><td>What's Love Got to Do with It</td></tr>
+<tr><td>TLC</td><td>No Scrubs</td></tr>
+<tr><td>TLC</td><td>Waterfalls</td></tr>
+<tr><td>The INTRUDERS</td><td>Together</td></tr>
+<tr><td>Tom Jones</td><td>I Know</td></tr>
+<tr><td>Tom Petty</td><td>Free Fallin'</td></tr>
+<tr><td>Tom Petty</td><td>I Won't Back Down</td></tr>
+<tr><td>Toni Braxton</td><td>Un-Break My Heart</td></tr>
+<tr><td>Bee Gees</td><td>TOO MUCH HEAVEN</td></tr>
+<tr><td>Toploader</td><td>Dancing In The Moonlight</td></tr>
+<tr><td>Mary MacGregor</td><td>TORN BETWEEN TWO LOVERS</td></tr>
+<tr><td>Bonnie Tyler</td><td>Total Eclipse of the Heart</td></tr>
+<tr><td>Toto</td><td>Africa</td></tr>
+<tr><td>Toto</td><td>I'LL BE OVER YOU</td></tr>
+<tr><td>Rupert holmes</td><td>TOUCH AND GO</td></tr>
+<tr><td>Diana Ross</td><td>Touch Me in the Morning</td></tr>
+<tr><td>Britney Spears</td><td>Toxic</td></tr>
+<tr><td>Tracy Chapman</td><td>Baby Can I Hold You</td></tr>
+<tr><td>Dean Martin</td><td>True Love</td></tr>
+<tr><td>The Platters</td><td>Twilight Time</td></tr>
+<tr><td>Tyla</td><td>Water</td></tr>
+<tr><td>UB40</td><td>Red Red Wine</td></tr>
+<tr><td>UMI, V</td><td>wherever u r</td></tr>
+<tr><td>Toni Braxton</td><td>Un-Break My Heart</td></tr>
+<tr><td>Red Hot Chili Peppers</td><td>Under the Bridge</td></tr>
+<tr><td>Bill Withers</td><td>Use Me</td></tr>
+<tr><td>Usher</td><td>Burn</td></tr>
+<tr><td>Van Halen</td><td>Jump</td></tr>
+<tr><td>Vanessa Williams</td><td>Save The Best For Last</td></tr>
+<tr><td>America</td><td>Ventura Highway</td></tr>
+<tr><td>MAUREEN MCGOVERN</td><td>VERY SPECIAL LOVE</td></tr>
+<tr><td>Vicente Ferna´ndez</td><td>Mujeres Divinas</td></tr>
+<tr><td></td><td>King and Queen of Hearts by David Pomeranz</td></tr>
+<tr><td>Don Mclean</td><td>VINCENT (Starry Starry Night) (Piano)</td></tr>
+<tr><td>Don Mclean</td><td>Vincent</td></tr>
+<tr><td></td><td>Volver Volver Lyrics</td></tr>
+<tr><td>Dionne Warwick</td><td>Walk On By</td></tr>
+<tr><td></td><td>Wandering</td></tr>
+<tr><td>Edwin Starr</td><td>War</td></tr>
+<tr><td></td><td>War Pigs</td></tr>
+<tr><td>Warrant</td><td>Cherry Pie</td></tr>
+<tr><td>Warren G, Nate Dogg</td><td>Regulate</td></tr>
+<tr><td>Elton John</td><td>WE ALL FALL IN LOVE SOMETIMES</td></tr>
+<tr><td>Elton John</td><td>WE ALL FALL IN LOVE SOMETIMES</td></tr>
+<tr><td>Queen</td><td>We Are The Champions</td></tr>
+<tr><td>The Beatles</td><td>We Can Work It Out</td></tr>
+<tr><td>Maureen McGovern</td><td>WE COULD HAVE IT ALL</td></tr>
+<tr><td>MAUREEN MCGOVERN</td><td>WE MAY NEVER LOVE LIKE THIS AGAIN</td></tr>
+<tr><td>Queen</td><td>We Will Rock You</td></tr>
+<tr><td>Boz Scaggs</td><td>WE'RE ALL ALONE</td></tr>
+<tr><td>Boz Scaggs</td><td>We're All Alone</td></tr>
+<tr><td>We've Got Tonight</td><td>Bob Seger</td></tr>
+<tr><td></td><td>We've Only Just Begun</td></tr>
+<tr><td>The Carpenters</td><td>We've Only Just Begun</td></tr>
+<tr><td>Barry Manilow</td><td>Weekend in New England</td></tr>
+<tr><td>Weezer</td><td>Buddy Holly</td></tr>
+<tr><td>Westlife</td><td>Flying Without Wings</td></tr>
+<tr><td>Wham!</td><td>Club Tropicana</td></tr>
+<tr><td>Wham!</td><td>Everything She Wants</td></tr>
+<tr><td>Wham!</td><td>Wake Me Up Before You Go-Go</td></tr>
+<tr><td>WHEN I THINK OF YOU</td><td>LEIFF GARRETT</td></tr>
+<tr><td></td><td>When I Think of You ][ leif garret</td></tr>
+<tr><td>Albert Hammond</td><td>When I'm Gone</td></tr>
+<tr><td>Albert Hammond</td><td>WHEN I'M GONE</td></tr>
+<tr><td>When The Children Cry</td><td>White Lion</td></tr>
+<tr><td>Whigfield</td><td>Close To You - Radio Edit</td></tr>
+<tr><td>Whitney Houston (With Mariah Carey)</td><td>When You Believe</td></tr>
+<tr><td>Whitney Houston</td><td>All The Man That I Need</td></tr>
+<tr><td>Whitney Houston</td><td>Didn't We Almost Have It All</td></tr>
+<tr><td>Whitney Houston</td><td>How Will I Know</td></tr>
+<tr><td>Whitney Houston</td><td>I Have Nothing</td></tr>
+<tr><td>Whitney Houston</td><td>I Have Nothing (Piano)</td></tr>
+<tr><td>Whitney Houston</td><td>I Wanna Dance With Somebody (Who Loves Me)</td></tr>
+<tr><td>Whitney Houston</td><td>I Will Always Love You (Piano)</td></tr>
+<tr><td>Whitney Houston</td><td>I Will Always Love You</td></tr>
+<tr><td>Whitney Houston</td><td>My Love Is Your Love</td></tr>
+<tr><td>Whitney Houston</td><td>One Moment In Time</td></tr>
+<tr><td>Whitney Houston</td><td>Saving All My Love For You</td></tr>
+<tr><td>Whitney Houston</td><td>The Greatest Love Of All</td></tr>
+<tr><td>Whitney Houston</td><td>Try It On My Own</td></tr>
+<tr><td>The Troggs</td><td>Wild Thing</td></tr>
+<tr><td>CAT STEVENS</td><td>WILD WORLD</td></tr>
+<tr><td>Cat Stevens</td><td>Wild World</td></tr>
+<tr><td>WILDFLOWER</td><td>Skylark</td></tr>
+<tr><td>Will Smith</td><td>Gettin' Jiggy Wit It</td></tr>
+<tr><td></td><td>Wonderful Tonight</td></tr>
+<tr><td>Eric Clapton</td><td>Wonderful Tonight</td></tr>
+<tr><td>Oasis</td><td>Wonderwall</td></tr>
+<tr><td>Matt Monro</td><td>Yesterday (Original Artist)</td></tr>
+<tr><td></td><td>Yesterday</td></tr>
+<tr><td></td><td>Yesterday by The Beatles</td></tr>
+<tr><td></td><td>Yesterday The Beatles</td></tr>
+<tr><td>The Carpenters</td><td>Yesterday Once More</td></tr>
+<tr><td>Yo no sé mañana (salsa)</td><td>Luis Enrique</td></tr>
+<tr><td>You Ain't Seen Nothing Yet</td><td>Bachman-Turner Overdrive</td></tr>
+<tr><td>You And I</td><td>Popularized by John Davidson</td></tr>
+<tr><td></td><td>You Are So Beautiful</td></tr>
+<tr><td>The Stylistics</td><td>You Make Me Feel Brand New</td></tr>
+<tr><td>Anne Murray</td><td>YOU NEEDED ME</td></tr>
+<tr><td>YOU NEVER TOLD ME YOU LOVE ME</td><td>Gabriel</td></tr>
+<tr><td>You're A Woman</td><td>Bad Boys Blue</td></tr>
+<tr><td>YOU'RE MY EVERYTHING</td><td>Santa Esmeralda</td></tr>
+<tr><td>Tom Jones</td><td>You're My World</td></tr>
+<tr><td>Carly Simon</td><td>You're So Vain</td></tr>
+<tr><td>Shania Twain</td><td>You're Still The One</td></tr>
+<tr><td>You've Made Me So Very Happy</td><td>Blood, Sweat &amp; Tears</td></tr>
+<tr><td>Your Eyes</td><td>Cook Da Books</td></tr>
+<tr><td>Your Mama Don't Dance</td><td>Loggins and Messina</td></tr>
+<tr><td>Elton John</td><td>Your Song</td></tr>
+<tr><td>Yuji, Putri Dahlia</td><td>Old Love</td></tr>
+<tr><td>The Delfonics [Instrumental]</td><td>FREE – La La Means I Love You (Instrumental)</td></tr>
+<tr><td></td><td>PART TIME LOVE David Gates</td></tr>
+<tr><td></td><td>This Girl Has Turned Into A Woman INSTRUMENTAL (Instrumental)</td></tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<!-- Pulsante Torna Su -->
+<button id="btnTornaSu" title="Torna su" style="display: none; position: fixed; bottom: 30px; right: 30px; z-index: 99; border: none; outline: none; background-color: #333; color: white; cursor: pointer; padding: 15px; border-radius: 50%; font-size: 18px; width: 50px; height: 50px; box-shadow: 0px 4px 10px rgba(0,0,0,0.3);">⬆</button>
+
+<script>
+// Prende il pulsante
+const mioBottone = document.getElementById("btnTornaSu");
+
+// Quando l'utente scende di 300px dall'inizio del documento, mostra il bottone
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        mioBottone.style.display = "block";
+    } else {
+        mioBottone.style.display = "none";
+    }
+};
+
+// Quando l'utente clicca sul bottone, torna in alto con un effetto fluido
+mioBottone.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Questo rende il movimento morbido
+    });
+});
+</script>
+
+
+<script>
+const input = document.getElementById('search');
+const rows = Array.from(document.querySelectorAll('#songs tbody tr'));
+const count = document.getElementById('count');
+
+function update() {
+  const q = input.value.trim().toLocaleLowerCase('it-IT');
+  let visible = 0;
+  rows.forEach(row => {
+    const match = !q || row.textContent.toLocaleLowerCase('it-IT').includes(q);
+    row.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  count.textContent = visible + (visible === 1 ? ' brano' : ' brani');
+}
+input.addEventListener('input', update);
+
+const backTop = document.getElementById('backTop');
+
+window.addEventListener('scroll', () => {
+  backTop.classList.toggle('show', window.scrollY > 500);
+}, {passive:true});
+
+backTop.addEventListener('click', () => {
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+</script>
