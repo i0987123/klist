@@ -1213,6 +1213,8 @@
     line-height:1.25;
     overflow-wrap:anywhere;
   }
+  
+  /* Stile originale del pulsante */
   #backTop {
     position:fixed;
     right:18px;
@@ -1223,7 +1225,7 @@
     border-radius:50%;
     background:#171717;
     color:#fff;
-    font-size:36px;
+    font-size:22px;
     line-height:1;
     cursor:pointer;
     display:none;
@@ -1239,7 +1241,7 @@
     transform:translateY(-2px);
   }
 
-  /*  REM PER LO SMARTPHONE */
+  /* 📱 REM PER LO SMARTPHONE */
   @media (max-width:600px) {
     .wrap {
       width: min(100% - 20px, 1080px);
@@ -1286,8 +1288,8 @@
       width: 62%;
     }
     
-    /* ⬆ Ingrandisce il pulsante per il telefono con qualsiasi ID sia scritto in fondo */
-    #backTop, #btnTornaSu {
+    /* Ingrandisce il pulsante per il telefono */
+    #backTop {
       width: 56px !important;
       height: 56px !important;
       font-size: 26px !important;
@@ -1295,34 +1297,16 @@
       right: 24px !important;
     }
   }
+</style> <!-- 🥇 LO STYLE SI CHIUDE CORRETTAMENTE QUI! -->
 
 
-<!-- Pulsante Torna Su -->
-<script>
-// Prende il pulsante con il nuovo ID corretto
-const mioBottone = document.getElementById("backTop");
+<!-- 📌 DA METTERE IN FONDO ALLA PAGINA (Sotto </main>) -->
 
-// Quando l'utente scende di 300px dall'inizio del documento, mostra il bottone
-window.onscroll = function() {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-        mioBottone.style.display = "flex"; // Usiamo flex per tenere la freccia centrata
-    } else {
-        mioBottone.style.display = "none";
-    }
-};
-
-// Quando l'utente clicca sul bottone, torna in alto con un effetto fluido
-mioBottone.addEventListener("click", function() {
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-    });
-});
-</script>
-
-
+<!-- Pulsante Torna Su con l'ID originale coerente con il CSS -->
+<button id="backTop" title="Torna su" aria-label="Torna su">⬆</button>
 
 <script>
+// 1. CODICE PER LA BARRA DI RICERCA VELOCE
 const input = document.getElementById('search');
 const rows = Array.from(document.querySelectorAll('#songs tbody tr'));
 const count = document.getElementById('count');
@@ -1339,16 +1323,26 @@ function update() {
 }
 input.addEventListener('input', update);
 
-const backTop = document.getElementById('backTop');
+
+// 2. CODICE PER MOSTRARE/NASCONDERE IL PULSANTE DURANTE LO SCROLL
+const bottoneTornaSu = document.getElementById('backTop');
 
 window.addEventListener('scroll', () => {
-  backTop.classList.toggle('show', window.scrollY > 500);
+  // Mostra il pulsante se si scende di oltre 400 pixel
+  if (window.scrollY > 400) {
+    bottoneTornaSu.style.display = 'flex';
+  } else {
+    bottoneTornaSu.style.display = 'none';
+  }
 }, {passive:true});
-</body>
-</html>
-backTop.addEventListener('click', () => {
+
+
+// 3. CODICE PER IL MOVIMENTO FLUIDO VERSO L'ALTO AL CLIC
+bottoneTornaSu.addEventListener('click', () => {
   window.scrollTo({top:0, behavior:'smooth'});
 });
 </script>
+
 </body>
 </html>
+
